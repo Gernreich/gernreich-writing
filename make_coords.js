@@ -25,9 +25,9 @@ const RIGHT_WORDS = ['DOUBLEO', 'FOURFIFTYSIXSEVENHUNDREDFORTYONE'];
 const swapGW = l => (l === 'G' ? 'W' : l === 'W' ? 'G' : l);
 const hisRead = steps => steps.reduce((s, d, i) => (i % 2 ? s + swapGW(READ[steps[i - 1] + ' ' + d]) : s), '');
 
-// Redraw `text` with the chart's letters, keeping his direction for each letter where
+// Redraw `text` with the chart's letters, keeping the drawn direction for each letter where
 // it is the same shape, and never revisiting a point or crossing a diagonal.
-function redraw(text, his) {
+function redraw(text, drawn) {
   const key = (x, y) => x + ',' + y;
   const seen = new Set([key(0, 0)]), diag = new Set(), out = [];
   let best = null, bestCost = Infinity;
@@ -45,7 +45,7 @@ function redraw(text, his) {
     if (cost >= bestCost) return;
     if (i === text.length) { best = out.slice(); bestCost = cost; return; }
     const [a, b] = LETTERS[text[i]];
-    const ways = [[a, b], [OPP[b], OPP[a]]].map(w => [w, w[0] === his[2 * i] && w[1] === his[2 * i + 1] ? 0 : 1])
+    const ways = [[a, b], [OPP[b], OPP[a]]].map(w => [w, w[0] === drawn[2 * i] && w[1] === drawn[2 * i + 1] ? 0 : 1])
       .sort((p, q) => p[1] - q[1]);
     for (const [[s1, s2], c] of ways) {
       if (!ok(x, y, s1)) continue;
