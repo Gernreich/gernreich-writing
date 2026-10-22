@@ -1,7 +1,8 @@
-// Writes images/coordinates.svg: Michael's two graph-paper lines (N 51 09.872,
+// Writes images/coordinates.svg: the two graph-paper lines (N 51 09.872,
 // E 004 56.741) redrawn with the chart's letters. Run: node make_coords.js
 //
-// The steps are traced from a photo of his sheet. Every letter keeps
+// The lines were drawn by someone else and sent to Michael to translate; the
+// steps are traced from a photo of the sheet. Every letter keeps
 // the direction he drew it in, except where his letter differs from the chart (his G
 // is the chart's W); those are redrawn, choosing directions so the line still never
 // crosses itself and changing as few of his letters as possible.
@@ -9,7 +10,7 @@ const fs = require('fs');
 const path = require('path');
 const { STEP, OPP, LETTERS, READ, read, points } = require('./gernreich.js');
 
-// As drawn, in his letters (G and W the other way round from the chart).
+// As drawn (G and W the other way round from the chart).
 const LEFT = `N N SE E N N NW NW E N NW N E NE NE NE
   SE N NE NE N NW NW N E NE SE E E NE NE NE
   NE NE W NW N E NW W NW NW NW W NW SW SW W N NE N NW NE NE N NE NE N NE NE E NW
@@ -68,7 +69,7 @@ const left = redraw(LEFT_WORDS.join(''), LEFT);
 const right = turn(redraw(RIGHT_WORDS.join(''), turn(RIGHT)));
 if (read(left) !== LEFT_WORDS.join('') || read(turn(right)) !== RIGHT_WORDS.join('')) throw new Error('redraw does not read back');
 
-// Place the lines as on his sheet: the right line starts 25 squares right of and 50
+// Place the lines as on the sheet: the right line starts 25 squares right of and 50
 // squares above the left line's start.
 const lines = [
   { pts: points(left), ox: 0, oy: 0, breaks: [16, 32] },

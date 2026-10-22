@@ -15,7 +15,8 @@ be traced either way, so the writer picks a direction for each letter to keep
 the line going; a reader needs only the starting dot.
 
 **Whose work this is.** The Gernreich writing, its alphabet and the texts written in
-it are Michael Carnright's. `gernreich.js` (writer and reader) and every drawing in
+it are Michael Carnright's, apart from the two coordinate lines, which someone else
+drew and sent him to translate. `gernreich.js` (writer and reader) and every drawing in
 `images/` (the chart, the fox sentence, Article 1, the map loop and the coordinates,
 all redrawn with the chart's letters) are by Claude Code.
 
