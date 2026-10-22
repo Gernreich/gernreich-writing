@@ -3,9 +3,9 @@
 //
 // The lines were drawn by someone else and sent to Michael to translate; the
 // steps are traced from a photo of the sheet. Every letter keeps
-// the direction he drew it in, except where his letter differs from the chart (his G
-// is the chart's W); those are redrawn, choosing directions so the line still never
-// crosses itself and changing as few of his letters as possible.
+// the direction it was drawn in, except where the drawn letter differs from the chart
+// (G drawn as the chart's W, and W as G); those are redrawn, choosing directions so the
+// line still never crosses itself and changing as few letters as possible.
 const fs = require('fs');
 const path = require('path');
 const { STEP, OPP, LETTERS, READ, read, points } = require('./gernreich.js');
