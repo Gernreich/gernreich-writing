@@ -24,7 +24,7 @@ Michael Carnright's. `gernreich.js` (writer and reader), the redrawn chart
 | `make_chart.js` | draws `images/alphabet.svg` from the table |
 | `make_article.js` | draws `images/article-1-claude.svg`: Article 1 of the Universal Declaration of Human Rights as one line |
 | `test.js` | `node test.js`: the table, Michael's samples read back, round trips, and both SVGs reproduce |
-| `images/` | the original chart and samples (ONE, GOUD, the fox sentence, Article 1, the map loop, the name in Ogham) |
+| `images/` | the original chart and samples (ONE, GOUD, the fox sentence, Article 1, the map loop) |
 | `originals/angular.DRW` | the drawing the chart came from |
 
 The fox sentence and the Article 1 drawing were drawn with G and W the other way

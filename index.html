@@ -64,7 +64,6 @@ figure img { max-width: 100%; height: auto; display: block; border: 1px solid va
 figcaption { font-size: 0.9rem; color: var(--ink-2); margin-top: 6px; }
 .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
 @media (max-width: 600px) { .pair { grid-template-columns: minmax(0, 1fr); } }
-.ogham img { max-height: 520px; width: auto; }
 footer { margin-top: 56px; padding-top: 16px; border-top: 1px solid var(--rule); font-size: 0.9rem; color: var(--ink-2); }
 </style>
 </head>
@@ -105,7 +104,9 @@ and the rarest, J K Q V X Z, are the shortest.</p>
 </figure>
 
 <h2>Write</h2>
-<p>Type anything. Letters outside the alphabet are left out; KH is written as one letter.</p>
+<p>Type anything. Letters outside the alphabet are left out; KH is written as one letter.
+Every drawing picks the direction of each letter at random, so the same text comes out
+as a different path each time: press <em>Draw again</em> for another.</p>
 <div class="panel">
   <label for="text" class="hint" style="display:block;margin:0 0 4px">Text</label>
   <textarea id="text" spellcheck="false">the quick red fox jumped over the lazy brown dog</textarea>
@@ -113,6 +114,7 @@ and the rarest, J K Q V X Z, are the shortest.</p>
     <span>Draw as</span>
     <button type="button" id="mode-words" aria-pressed="true">one line per word</button>
     <button type="button" id="mode-one" aria-pressed="false">one line for everything</button>
+    <button type="button" id="again">Draw again</button>
   </div>
   <svg id="written" class="out" role="img" aria-label="The text drawn in the Gernreich writing"></svg>
   <div class="hint" id="written-note"></div>
@@ -188,12 +190,6 @@ two of the longer samples draw a pair of letters the other way round, noted unde
   Africae</em>), with red crosses along it. Not decoded here.</figcaption>
 </figure>
 
-<figure class="ogham">
-  <img src="images/ogham-name.png" width="837" height="2117" alt="A hand-drawn vertical line with dots and strokes across it, labelled Michael (micel) and Carnright (carnrit)">
-  <figcaption>A related experiment in a different script: Michael's name in Ogham, the
-  early Irish alphabet of strokes across a stem line, written as MICEL CARNRIT.</figcaption>
-</figure>
-
 <p><code>originals/angular.DRW</code> is the drawing the chart came from, made in TopDraw
 2.00 on NeXT.</p>
 
@@ -229,7 +225,7 @@ two of the longer samples draw a pair of letters the other way round, noted unde
     const MAXW = mode === 'one' ? Infinity : 42, GAP = 2;
     let x = 0, y = 0, rowH = 0, total = 0, clean = true, W = 0, placed = [];
     for (const w of words) {
-      const r = write(w); clean = clean && r.clean; total += w.length;
+      const r = write(w, 40000, () => Math.random()); clean = clean && r.clean; total += w.length;
       const pts = points(r.steps);
       const xs = pts.map(p => p[0]), ys = pts.map(p => p[1]);
       const minX = Math.min(...xs), minY = Math.min(...ys);
@@ -256,6 +252,7 @@ two of the longer samples draw a pair of letters the other way round, noted unde
   }
   $('mode-words').addEventListener('click', () => setMode('words'));
   $('mode-one').addEventListener('click', () => setMode('one'));
+  $('again').addEventListener('click', render);
   $('text').addEventListener('input', render);
   document.querySelectorAll('[data-write]').forEach(a => a.addEventListener('click', ev => {
     ev.preventDefault();
