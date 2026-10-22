@@ -13,7 +13,7 @@ for (const l in g.LETTERS) (groups[g.span2(l)] ||= []).push(l);
 check('the chart\'s groups: 1, 2, 4, 5, 8 units² with 8, 4, 6, 8, 2 letters',
   JSON.stringify(Object.keys(groups).map(k => [+k, groups[k].length])) === '[[1,8],[2,4],[4,6],[5,8],[8,2]]');
 
-// paths traced from Michael's drawings, read with the chart
+// paths traced from Michael's drawings (not in the repo), read with the chart
 const traced = {
   'ONE (one.bmp, first)': ['S SE E NE NE NE', 'ONE'],
   'ONE (one.bmp, second)': ['NW N SW W NE NE', 'ONE'],

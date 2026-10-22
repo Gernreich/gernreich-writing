@@ -14,11 +14,10 @@ are A–Z, KH, and a 28th drawn in the chart as a marked R (Ř). Each shape can
 be traced either way, so the writer picks a direction for each letter to keep
 the line going; a reader needs only the starting dot.
 
-**Whose work this is.** The Gernreich writing, its alphabet and the drawings in
-`images/` that are not SVG, and `originals/angular.DRW` (TopDraw 2.00, NeXT), are
-Michael Carnright's. `gernreich.js` (writer and reader), the redrawn chart
-`images/alphabet.svg`, `images/fox.svg`, `images/coordinates.svg`, the map redrawing `images/map-loop.jpg` and the Article 1 drawing
-`images/article-1-claude.svg` are by Claude Code.
+**Whose work this is.** The Gernreich writing, its alphabet and the texts written in
+it are Michael Carnright's. `gernreich.js` (writer and reader) and every drawing in
+`images/` (the chart, the fox sentence, Article 1, the map loop and the coordinates,
+all redrawn with the chart's letters) are by Claude Code.
 
 | Path | What |
 |---|---|
@@ -29,7 +28,6 @@ Michael Carnright's. `gernreich.js` (writer and reader), the redrawn chart
 | `test.js` | `node test.js`: the table, Michael's samples read back, round trips, and both SVGs reproduce |
 | `make_coords.js` | draws `images/coordinates.svg`: the two graph-paper lines (a GPS position) with the chart's letters |
 | `make_fox.js` | draws `images/fox.svg`: the fox sentence, a word to a line |
-| `images/` | the original chart and samples (ONE, GOUD), the map loop redrawn, and the photo of the two coordinate lines |
-| `originals/angular.DRW` | the drawing the chart came from |
+| `images/` | the drawings above, and the map loop redrawn over its map |
 
 Released under [CC0 1.0](LICENSE).

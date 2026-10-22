@@ -1,7 +1,7 @@
 // Writes images/coordinates.svg: Michael's two graph-paper lines (N 51 09.872,
 // E 004 56.741) redrawn with the chart's letters. Run: node make_coords.js
 //
-// The steps are traced from his photo (images/bolleke-pijl.jpg). Every letter keeps
+// The steps are traced from a photo of his sheet. Every letter keeps
 // the direction he drew it in, except where his letter differs from the chart (his G
 // is the chart's W); those are redrawn, choosing directions so the line still never
 // crosses itself and changing as few of his letters as possible.
