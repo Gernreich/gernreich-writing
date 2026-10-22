@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gernreich Writing</title>
+<meta name="description" content="A script in which every letter is two steps on a square grid and every word is one unbroken line, with a live writer and reader.">
+<style>
+:root {
+  --bg: #fcfcfb;
+  --surface: #f3f2ee;
+  --ink: #0b0b0b;
+  --ink-2: #52514e;
+  --rule: #dddcd6;
+  --accent: #2a78d6;
+  --start: #e34948;
+  --grid: #d6d5cf;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1a1a19; --surface: #252523; --ink: #f0efec; --ink-2: #c3c2b7; --rule: #3a3a37;
+    --accent: #3987e5; --start: #e66767; --grid: #45453f;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1a1a19; --surface: #252523; --ink: #f0efec; --ink-2: #c3c2b7; --rule: #3a3a37;
+  --accent: #3987e5; --start: #e66767; --grid: #45453f;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 17px/1.6 ui-sans-serif, -apple-system, "Segoe UI", system-ui, sans-serif;
+}
+main { max-width: 860px; overflow-wrap: break-word; margin: 0 auto; padding: 40px 16px 64px; }
+h1 { font-size: 2.1rem; line-height: 1.15; margin: 0 0 12px; letter-spacing: -0.01em; }
+h2 { font-size: 1.35rem; margin: 48px 0 8px; padding-top: 16px; border-top: 1px solid var(--rule); }
+h3 { font-size: 1.05rem; margin: 24px 0 6px; }
+.lede { font-size: 1.12rem; color: var(--ink-2); margin: 0 0 24px; }
+a { color: var(--accent); }
+code, textarea { font: 0.9em ui-monospace, SFMono-Regular, Menlo, monospace; }
+.credit { background: var(--surface); border-left: 3px solid var(--accent); padding: 12px 16px; border-radius: 4px; }
+
+.panel { background: var(--surface); border-radius: 6px; padding: 14px 16px; margin-top: 12px; }
+textarea { width: 100%; height: 76px; background: var(--bg); color: var(--ink); border: 1px solid var(--rule); border-radius: 4px; padding: 8px; }
+.row { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; margin-top: 8px; font-size: 0.92rem; }
+button { font: inherit; font-size: 0.88rem; color: var(--ink); background: transparent;
+  border: 1px solid var(--rule); border-radius: 4px; padding: 3px 12px; cursor: pointer; }
+button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+button:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.out { width: 100%; display: block; margin-top: 12px; }
+.out .ln { fill: none; stroke: var(--ink); stroke-width: 0.12; stroke-linecap: round; stroke-linejoin: round; }
+.out .dot { fill: var(--start); }
+.hint { font-size: 0.85rem; color: var(--ink-2); margin-top: 8px; }
+#pad { width: 100%; max-width: 560px; display: block; margin-top: 12px; touch-action: manipulation; cursor: pointer; }
+#pad .pt { fill: var(--grid); }
+#pad .hit { fill: transparent; }
+#pad .ln { fill: none; stroke: var(--ink); stroke-width: 0.12; stroke-linecap: round; stroke-linejoin: round; }
+#pad .dot { fill: var(--start); }
+#pad .next { fill: var(--accent); opacity: 0.5; }
+.readout { font-size: 1.3rem; font-weight: 650; letter-spacing: 0.06em; min-height: 1.6em; margin-top: 8px; }
+
+figure { margin: 20px 0; }
+figure img { max-width: 100%; height: auto; display: block; border: 1px solid var(--rule); border-radius: 6px; background: #fff; }
+figcaption { font-size: 0.9rem; color: var(--ink-2); margin-top: 6px; }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+@media (max-width: 600px) { .pair { grid-template-columns: minmax(0, 1fr); } }
+.ogham img { max-height: 520px; width: auto; }
+footer { margin-top: 56px; padding-top: 16px; border-top: 1px solid var(--rule); font-size: 0.9rem; color: var(--ink-2); }
+</style>
+</head>
+<body>
+<main>
+<p style="margin:0 0 12px;font-size:0.95rem"><a href="https://gernreich.github.io/">← All projects</a></p>
+<h1>Gernreich writing</h1>
+<p class="lede">A script in which every letter is two steps on a square grid, and every
+word is one unbroken line. Each letter starts where the one before it ended, so a
+sentence draws itself as a single path that wanders across the page.</p>
+
+<p class="credit"><strong>Whose work this is.</strong> The Gernreich writing, its
+alphabet and the drawings under <a href="#originals">The originals</a> are Michael
+Carnright's. The writer and reader on this page, the redrawn chart and the second
+drawing of Article 1 are by Claude Code, built from his alphabet chart.</p>
+
+<h2>How it works</h2>
+<p>A pen on a square grid can move one step in eight directions: across, up and down,
+or diagonally. A letter is two such steps. Two steps that double back on themselves
+make no shape, which leaves exactly 28 shapes, and the alphabet uses every one of them:
+the 26 letters, KH, and a 28th drawn in the chart with a marked R (shown here as Ř;
+its sound is not recorded).</p>
+<p>A shape can be traced either way, so the writer chooses the direction of each letter
+to keep the line going and keep it from running into itself. The same word can come out
+as several different paths; <code>ONE</code> is drawn five ways in the
+<a href="#originals">originals</a>. A reader needs only the starting point, marked with a
+dot: from there every two steps is one letter.</p>
+
+<h2>The alphabet</h2>
+<p>The chart groups the letters by how far apart a letter's two ends are, as the square
+of that distance: 1, 2, 4, 5 or 8 units². The groups follow how often the letters are
+used in English. The ten most common, E T A O I N S H R D, are the two longest groups,
+and the rarest, J K Q V X Z, are the shortest.</p>
+<figure>
+  <img src="images/alphabet.svg" width="822" height="652" style="border:0;background:none" alt="The 28 letters of the Gernreich writing, each two steps on a grid of dots, in five rows by the squared distance between the letter's ends: 1 (KH, Ř, Z, Q, J, X, K, V), 2 (B, W, P, Y), 4 (G, F, M, C, U, L), 5 (D, H, S, I, R, N, O, A) and 8 (T, E)">
+  <figcaption>The chart redrawn from the same table the writer and reader use
+  (<code>make_chart.js</code>). Michael's original is under <a href="#originals">The originals</a>.</figcaption>
+</figure>
+
+<h2>Write</h2>
+<p>Type anything. Letters outside the alphabet are left out; KH is written as one letter.</p>
+<div class="panel">
+  <label for="text" class="hint" style="display:block;margin:0 0 4px">Text</label>
+  <textarea id="text" spellcheck="false">the quick red fox jumped over the lazy brown dog</textarea>
+  <div class="row">
+    <span>Draw as</span>
+    <button type="button" id="mode-words" aria-pressed="true">one line per word</button>
+    <button type="button" id="mode-one" aria-pressed="false">one line for everything</button>
+  </div>
+  <svg id="written" class="out" role="img" aria-label="The text drawn in the Gernreich writing"></svg>
+  <div class="hint" id="written-note"></div>
+</div>
+
+<h2>Read</h2>
+<p>Draw a path: tap a point to start, then tap one of the eight points around the end
+of the line to go on. Every two steps is read as a letter.</p>
+<div class="panel">
+  <svg id="pad" role="img" aria-label="Drawing grid"></svg>
+  <div class="readout" id="readout" aria-live="polite"></div>
+  <div class="row">
+    <button type="button" id="undo">Undo</button>
+    <button type="button" id="clear">Clear</button>
+    <span class="hint" id="pad-note" style="margin:0"></span>
+  </div>
+</div>
+
+<h2 id="originals">The originals</h2>
+<p>The alphabet chart and the samples as Michael drew them. The chart is the reference:
+two of the longer samples draw a pair of letters the other way round, noted under each.</p>
+
+<figure>
+  <img src="images/alphabet-chart.png" width="552" height="414" alt="The alphabet chart: 28 two-step shapes in five rows, labelled with letters and with sqr(1), sqr(2), sqr(4), sqr(5) and sqr(8)">
+  <figcaption>The alphabet chart. <code>sqr(n)</code> labels each row with the square of the
+  distance between a letter's ends.</figcaption>
+</figure>
+
+<div class="pair">
+<figure>
+  <img src="images/one.png" width="448" height="265" alt="Five short paths, each starting at a dot">
+  <figcaption><strong>ONE</strong>, five times. Each path traces the same three letters, O, N
+  and E, choosing a different direction for some of them. In the first, E's two
+  diagonals run straight on from N's last step, so they draw as one long line.</figcaption>
+</figure>
+<figure>
+  <img src="images/goud.png" width="485" height="295" alt="Nine short paths, each starting at a small circle">
+  <figcaption><strong>GOUD</strong> (Dutch for gold), nine times, nine paths.</figcaption>
+</figure>
+</div>
+
+<figure>
+  <img src="images/fox.png" width="554" height="583" alt="Ten word paths down the left and one long path of the whole sentence">
+  <figcaption><strong>THE QUICK RED FOX JUMPED OVER THE LAZY BROWN DOG</strong>, a word at a
+  time down the left and as one line on the right. G and W are drawn the other way round
+  from the chart, so DOG ends in the corner and BROWN has the straight line.
+  <a href="#" data-write="the quick red fox jumped over the lazy brown dog">Redraw it with the chart's letters</a>.</figcaption>
+</figure>
+
+<figure>
+  <img src="images/article-1.png" width="1006" height="907" alt="One long coloured path that winds across the whole image, starting at an arrow">
+  <figcaption><strong>Article 1 of the Universal Declaration of Human Rights</strong>, as one
+  line: "All human beings are born free and equal in dignity and rights. They are endowed
+  with reason and conscience and should act towards one another in a spirit of
+  brotherhood." Drawn with T and E swapped, and G and W swapped, so "brotherhood" reads
+  BROEHTRHOOD by the chart.
+  <a href="#" data-write="All human beings are born free and equal in dignity and rights. They are endowed with reason and conscience and should act towards one another in a spirit of brotherhood." data-mode="one">Redraw it with the chart's letters</a>.</figcaption>
+</figure>
+
+<h3>Article 1, drawn by Claude Code</h3>
+<figure>
+  <img src="images/article-1-claude.svg" width="672" height="780" style="border:0;background:none" alt="Article 1 as one coloured line that works its way down the image in rough rows, from a dot at the top left to an arrow at the bottom">
+  <figcaption>The same 139 letters with the chart's letters, as a version of Michael's
+  drawing above by Claude Code. Each word has its own colour, and the line starts at
+  the dot and ends at the arrow. A beam search chooses which way to trace each letter
+  so that the line works back and forth in rows without ever crossing or touching
+  itself (<code>make_article.js</code>). Hover over a word to see it.</figcaption>
+</figure>
+
+<figure>
+  <img src="images/gernloop.jpg" width="640" height="484" alt="A closed path of the script drawn over an old map titled Tabula Nova Partis Africae, on paper with burnt edges, with red crosses along it">
+  <figcaption>A closed loop of the writing over an old map (<em>Tabula Nova Partis
+  Africae</em>), with red crosses along it. Not decoded here.</figcaption>
+</figure>
+
+<figure class="ogham">
+  <img src="images/ogham-name.png" width="837" height="2117" alt="A hand-drawn vertical line with dots and strokes across it, labelled Michael (micel) and Carnright (carnrit)">
+  <figcaption>A related experiment in a different script: Michael's name in Ogham, the
+  early Irish alphabet of strokes across a stem line, written as MICEL CARNRIT.</figcaption>
+</figure>
+
+<p><code>originals/angular.DRW</code> is the drawing the chart came from, made in TopDraw
+2.00 on NeXT.</p>
+
+<footer>
+  <a href="https://github.com/Gernreich/gernreich-writing">Repository</a> ·
+  <code>gernreich.js</code> holds the alphabet, the writer and the reader;
+  <code>make_chart.js</code> and <code>make_article.js</code> draw the two SVGs;
+  <code>node test.js</code> checks all of them.
+</footer>
+</main>
+
+<script src="gernreich.js"></script>
+<script>
+(function () {
+  const NS = 'http://www.w3.org/2000/svg';
+  const $ = id => document.getElementById(id);
+  const el = (tag, attrs, parent) => {
+    const e = document.createElementNS(NS, tag);
+    for (const k in attrs) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  };
+  const pathD = pts => pts.map((p, i) => (i ? 'L' : 'M') + p[0] + ' ' + p[1]).join('');
+
+  // ---- the writer
+  let mode = 'words';
+  function render() {
+    const text = $('text').value;
+    const chunks = mode === 'one' ? [text] : text.split(/\s+/);
+    const words = chunks.map(letters).filter(w => w.length);
+    const svg = $('written'); svg.innerHTML = '';
+    if (!words.length) { svg.setAttribute('viewBox', '0 0 10 1'); $('written-note').textContent = ''; return; }
+    const MAXW = mode === 'one' ? Infinity : 42, GAP = 2;
+    let x = 0, y = 0, rowH = 0, total = 0, clean = true, W = 0, placed = [];
+    for (const w of words) {
+      const r = write(w); clean = clean && r.clean; total += w.length;
+      const pts = points(r.steps);
+      const xs = pts.map(p => p[0]), ys = pts.map(p => p[1]);
+      const minX = Math.min(...xs), minY = Math.min(...ys);
+      const bw = Math.max(...xs) - minX, bh = Math.max(...ys) - minY;
+      if (x > 0 && x + bw > MAXW) { x = 0; y += rowH + GAP; rowH = 0; }
+      placed.push(pts.map(p => [p[0] - minX + x, p[1] - minY + y]));
+      W = Math.max(W, x + bw); x += bw + GAP; rowH = Math.max(rowH, bh);
+    }
+    const H = y + rowH, pad = 0.6;
+    svg.setAttribute('viewBox', `${-pad} ${-pad} ${W + 2 * pad} ${H + 2 * pad}`);
+    svg.style.maxHeight = mode === 'one' ? '70vh' : 'none';
+    for (const pts of placed) {
+      el('path', { class: 'ln', d: pathD(pts) }, svg);
+      el('circle', { class: 'dot', cx: pts[0][0], cy: pts[0][1], r: 0.22 }, svg);
+    }
+    $('written-note').textContent = `${total} letters, ${words.length} line${words.length > 1 ? 's' : ''}` +
+      (clean ? ', none crossing itself.' : '. One line could not be kept from crossing itself and is drawn with every letter traced forwards.');
+  }
+  function setMode(m) {
+    mode = m;
+    $('mode-words').setAttribute('aria-pressed', String(m === 'words'));
+    $('mode-one').setAttribute('aria-pressed', String(m === 'one'));
+    render();
+  }
+  $('mode-words').addEventListener('click', () => setMode('words'));
+  $('mode-one').addEventListener('click', () => setMode('one'));
+  $('text').addEventListener('input', render);
+  document.querySelectorAll('[data-write]').forEach(a => a.addEventListener('click', ev => {
+    ev.preventDefault();
+    $('text').value = a.dataset.write;
+    setMode(a.dataset.mode || 'words');
+    $('text').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }));
+  render();
+
+  // ---- the reader
+  const GW = 15, GH = 9, pad = $('pad');
+  pad.setAttribute('viewBox', `-0.6 -0.6 ${GW + 0.2} ${GH + 0.2}`);
+  let path = [];
+  const KEY = {};
+  for (const [d, [dx, dy]] of Object.entries(STEP)) KEY[dx + ',' + dy] = d;
+  function drawPad() {
+    pad.innerHTML = '';
+    const last = path[path.length - 1];
+    for (let y = 0; y < GH; y++) for (let x = 0; x < GW; x++) {
+      const near = last && Math.max(Math.abs(x - last[0]), Math.abs(y - last[1])) === 1;
+      el('circle', { class: near ? 'next' : 'pt', cx: x, cy: y, r: near ? 0.16 : 0.07 }, pad);
+    }
+    if (path.length) {
+      el('path', { class: 'ln', d: pathD(path) }, pad);
+      el('circle', { class: 'dot', cx: path[0][0], cy: path[0][1], r: 0.2 }, pad);
+    }
+    for (let y = 0; y < GH; y++) for (let x = 0; x < GW; x++) {
+      const h = el('circle', { class: 'hit', cx: x, cy: y, r: 0.48 }, pad);
+      h.addEventListener('click', () => tap(x, y));
+    }
+    const steps = [];
+    for (let i = 1; i < path.length; i++) steps.push(KEY[(path[i][0] - path[i - 1][0]) + ',' + (path[i][1] - path[i - 1][1])]);
+    $('readout').textContent = read(steps) + (steps.length % 2 ? '·' : '');
+    $('pad-note').textContent = !path.length ? 'Tap any point to start.' :
+      steps.length % 2 ? 'Half a letter: one more step.' : `${steps.length / 2} letter${steps.length === 2 ? '' : 's'}.`;
+  }
+  function tap(x, y) {
+    const last = path[path.length - 1];
+    if (!last) path.push([x, y]);
+    else {
+      const dx = x - last[0], dy = y - last[1];
+      if (Math.max(Math.abs(dx), Math.abs(dy)) !== 1) return;
+      const prev = path[path.length - 2];
+      if (prev && prev[0] === x && prev[1] === y && (path.length - 1) % 2 === 1) return; // doubling back inside a letter makes no shape
+      path.push([x, y]);
+    }
+    drawPad();
+  }
+  $('undo').addEventListener('click', () => { path.pop(); drawPad(); });
+  $('clear').addEventListener('click', () => { path = []; drawPad(); });
+  drawPad();
+})();
+</script>
+</body>
+</html>

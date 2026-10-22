@@ -1,0 +1,513 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 822 652" width="822" height="652" role="img" aria-label="The Gernreich writing: 28 letters, each two steps on a square grid, in five rows by the squared distance between the letter's ends">
+<style>
+  .bg { fill: #fcfcfb; } .t { fill: #0b0b0b; } .s { fill: #6b6a66; } .dot { fill: #c9c8c1; }
+  .g { fill: none; stroke: #0b0b0b; stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; }
+  .end { fill: #0b0b0b; } .rule { stroke: #e2e1db; stroke-width: 1; }
+  text { font-family: ui-sans-serif, -apple-system, "Segoe UI", system-ui, sans-serif; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #1a1a19; } .t { fill: #f0efec; } .s { fill: #a3a29a; } .dot { fill: #4a4a45; }
+    .g { stroke: #f0efec; } .end { fill: #f0efec; } .rule { stroke: #3a3a37; }
+  }
+</style>
+<rect class="bg" width="822" height="652" rx="10"/>
+<text class="t" x="24" y="38" font-size="22" font-weight="700">Gernreich writing</text>
+<text class="s" x="24" y="58" font-size="13">Every letter is two steps on a square grid. Rows: the squared distance between a letter's ends.</text>
+<text class="t" x="24" y="124" font-size="20" font-weight="700">1</text>
+<text class="s" x="24" y="144" font-size="12">unit², 8 letters</text>
+<circle class="dot" cx="128.0" cy="85.0" r="1.8"/>
+<circle class="dot" cx="128.0" cy="107.0" r="1.8"/>
+<circle class="dot" cx="128.0" cy="129.0" r="1.8"/>
+<circle class="dot" cx="128.0" cy="151.0" r="1.8"/>
+<circle class="dot" cx="150.0" cy="85.0" r="1.8"/>
+<circle class="dot" cx="150.0" cy="107.0" r="1.8"/>
+<circle class="dot" cx="150.0" cy="129.0" r="1.8"/>
+<circle class="dot" cx="150.0" cy="151.0" r="1.8"/>
+<circle class="dot" cx="172.0" cy="85.0" r="1.8"/>
+<circle class="dot" cx="172.0" cy="107.0" r="1.8"/>
+<circle class="dot" cx="172.0" cy="129.0" r="1.8"/>
+<circle class="dot" cx="172.0" cy="151.0" r="1.8"/>
+<circle class="dot" cx="194.0" cy="85.0" r="1.8"/>
+<circle class="dot" cx="194.0" cy="107.0" r="1.8"/>
+<circle class="dot" cx="194.0" cy="129.0" r="1.8"/>
+<circle class="dot" cx="194.0" cy="151.0" r="1.8"/>
+<path class="g" d="M150.0 129.0L150.0 107.0L172.0 129.0"/>
+<circle class="end" cx="150.0" cy="129.0" r="3"/>
+<circle class="end" cx="172.0" cy="129.0" r="3"/>
+<text class="t" x="161" y="174" font-size="15" font-weight="650" text-anchor="middle">KH</text>
+<circle class="dot" cx="214.0" cy="85.0" r="1.8"/>
+<circle class="dot" cx="214.0" cy="107.0" r="1.8"/>
+<circle class="dot" cx="214.0" cy="129.0" r="1.8"/>
+<circle class="dot" cx="214.0" cy="151.0" r="1.8"/>
+<circle class="dot" cx="236.0" cy="85.0" r="1.8"/>
+<circle class="dot" cx="236.0" cy="107.0" r="1.8"/>
+<circle class="dot" cx="236.0" cy="129.0" r="1.8"/>
+<circle class="dot" cx="236.0" cy="151.0" r="1.8"/>
+<circle class="dot" cx="258.0" cy="85.0" r="1.8"/>
+<circle class="dot" cx="258.0" cy="107.0" r="1.8"/>
+<circle class="dot" cx="258.0" cy="129.0" r="1.8"/>
+<circle class="dot" cx="258.0" cy="151.0" r="1.8"/>
+<circle class="dot" cx="280.0" cy="85.0" r="1.8"/>
+<circle class="dot" cx="280.0" cy="107.0" r="1.8"/>
+<circle class="dot" cx="280.0" cy="129.0" r="1.8"/>
+<circle class="dot" cx="280.0" cy="151.0" r="1.8"/>
+<path class="g" d="M236.0 107.0L258.0 107.0L236.0 129.0"/>
+<circle class="end" cx="236.0" cy="107.0" r="3"/>
+<circle class="end" cx="236.0" cy="129.0" r="3"/>
+<text class="t" x="247" y="174" font-size="15" font-weight="650" text-anchor="middle">Ř</text>
+<circle class="dot" cx="300.0" cy="85.0" r="1.8"/>
+<circle class="dot" cx="300.0" cy="107.0" r="1.8"/>
+<circle class="dot" cx="300.0" cy="129.0" r="1.8"/>
+<circle class="dot" cx="300.0" cy="151.0" r="1.8"/>
+<circle class="dot" cx="322.0" cy="85.0" r="1.8"/>
+<circle class="dot" cx="322.0" cy="107.0" r="1.8"/>
+<circle class="dot" cx="322.0" cy="129.0" r="1.8"/>
+<circle class="dot" cx="322.0" cy="151.0" r="1.8"/>
+<circle class="dot" cx="344.0" cy="85.0" r="1.8"/>
+<circle class="dot" cx="344.0" cy="107.0" r="1.8"/>
+<circle class="dot" cx="344.0" cy="129.0" r="1.8"/>
+<circle class="dot" cx="344.0" cy="151.0" r="1.8"/>
+<circle class="dot" cx="366.0" cy="85.0" r="1.8"/>
+<circle class="dot" cx="366.0" cy="107.0" r="1.8"/>
+<circle class="dot" cx="366.0" cy="129.0" r="1.8"/>
+<circle class="dot" cx="366.0" cy="151.0" r="1.8"/>
+<path class="g" d="M322.0 107.0L344.0 129.0L344.0 107.0"/>
+<circle class="end" cx="322.0" cy="107.0" r="3"/>
+<circle class="end" cx="344.0" cy="107.0" r="3"/>
+<text class="t" x="333" y="174" font-size="15" font-weight="650" text-anchor="middle">Z</text>
+<circle class="dot" cx="386.0" cy="85.0" r="1.8"/>
+<circle class="dot" cx="386.0" cy="107.0" r="1.8"/>
+<circle class="dot" cx="386.0" cy="129.0" r="1.8"/>
+<circle class="dot" cx="386.0" cy="151.0" r="1.8"/>
+<circle class="dot" cx="408.0" cy="85.0" r="1.8"/>
+<circle class="dot" cx="408.0" cy="107.0" r="1.8"/>
+<circle class="dot" cx="408.0" cy="129.0" r="1.8"/>
+<circle class="dot" cx="408.0" cy="151.0" r="1.8"/>
+<circle class="dot" cx="430.0" cy="85.0" r="1.8"/>
+<circle class="dot" cx="430.0" cy="107.0" r="1.8"/>
+<circle class="dot" cx="430.0" cy="129.0" r="1.8"/>
+<circle class="dot" cx="430.0" cy="151.0" r="1.8"/>
+<circle class="dot" cx="452.0" cy="85.0" r="1.8"/>
+<circle class="dot" cx="452.0" cy="107.0" r="1.8"/>
+<circle class="dot" cx="452.0" cy="129.0" r="1.8"/>
+<circle class="dot" cx="452.0" cy="151.0" r="1.8"/>
+<path class="g" d="M430.0 107.0L408.0 129.0L430.0 129.0"/>
+<circle class="end" cx="430.0" cy="107.0" r="3"/>
+<circle class="end" cx="430.0" cy="129.0" r="3"/>
+<text class="t" x="419" y="174" font-size="15" font-weight="650" text-anchor="middle">Q</text>
+<circle class="dot" cx="472.0" cy="85.0" r="1.8"/>
+<circle class="dot" cx="472.0" cy="107.0" r="1.8"/>
+<circle class="dot" cx="472.0" cy="129.0" r="1.8"/>
+<circle class="dot" cx="472.0" cy="151.0" r="1.8"/>
+<circle class="dot" cx="494.0" cy="85.0" r="1.8"/>
+<circle class="dot" cx="494.0" cy="107.0" r="1.8"/>
+<circle class="dot" cx="494.0" cy="129.0" r="1.8"/>
+<circle class="dot" cx="494.0" cy="151.0" r="1.8"/>
+<circle class="dot" cx="516.0" cy="85.0" r="1.8"/>
+<circle class="dot" cx="516.0" cy="107.0" r="1.8"/>
+<circle class="dot" cx="516.0" cy="129.0" r="1.8"/>
+<circle class="dot" cx="516.0" cy="151.0" r="1.8"/>
+<circle class="dot" cx="538.0" cy="85.0" r="1.8"/>
+<circle class="dot" cx="538.0" cy="107.0" r="1.8"/>
+<circle class="dot" cx="538.0" cy="129.0" r="1.8"/>
+<circle class="dot" cx="538.0" cy="151.0" r="1.8"/>
+<path class="g" d="M494.0 107.0L494.0 129.0L516.0 107.0"/>
+<circle class="end" cx="494.0" cy="107.0" r="3"/>
+<circle class="end" cx="516.0" cy="107.0" r="3"/>
+<text class="t" x="505" y="174" font-size="15" font-weight="650" text-anchor="middle">J</text>
+<circle class="dot" cx="558.0" cy="85.0" r="1.8"/>
+<circle class="dot" cx="558.0" cy="107.0" r="1.8"/>
+<circle class="dot" cx="558.0" cy="129.0" r="1.8"/>
+<circle class="dot" cx="558.0" cy="151.0" r="1.8"/>
+<circle class="dot" cx="580.0" cy="85.0" r="1.8"/>
+<circle class="dot" cx="580.0" cy="107.0" r="1.8"/>
+<circle class="dot" cx="580.0" cy="129.0" r="1.8"/>
+<circle class="dot" cx="580.0" cy="151.0" r="1.8"/>
+<circle class="dot" cx="602.0" cy="85.0" r="1.8"/>
+<circle class="dot" cx="602.0" cy="107.0" r="1.8"/>
+<circle class="dot" cx="602.0" cy="129.0" r="1.8"/>
+<circle class="dot" cx="602.0" cy="151.0" r="1.8"/>
+<circle class="dot" cx="624.0" cy="85.0" r="1.8"/>
+<circle class="dot" cx="624.0" cy="107.0" r="1.8"/>
+<circle class="dot" cx="624.0" cy="129.0" r="1.8"/>
+<circle class="dot" cx="624.0" cy="151.0" r="1.8"/>
+<path class="g" d="M602.0 107.0L580.0 107.0L602.0 129.0"/>
+<circle class="end" cx="602.0" cy="107.0" r="3"/>
+<circle class="end" cx="602.0" cy="129.0" r="3"/>
+<text class="t" x="591" y="174" font-size="15" font-weight="650" text-anchor="middle">X</text>
+<circle class="dot" cx="644.0" cy="85.0" r="1.8"/>
+<circle class="dot" cx="644.0" cy="107.0" r="1.8"/>
+<circle class="dot" cx="644.0" cy="129.0" r="1.8"/>
+<circle class="dot" cx="644.0" cy="151.0" r="1.8"/>
+<circle class="dot" cx="666.0" cy="85.0" r="1.8"/>
+<circle class="dot" cx="666.0" cy="107.0" r="1.8"/>
+<circle class="dot" cx="666.0" cy="129.0" r="1.8"/>
+<circle class="dot" cx="666.0" cy="151.0" r="1.8"/>
+<circle class="dot" cx="688.0" cy="85.0" r="1.8"/>
+<circle class="dot" cx="688.0" cy="107.0" r="1.8"/>
+<circle class="dot" cx="688.0" cy="129.0" r="1.8"/>
+<circle class="dot" cx="688.0" cy="151.0" r="1.8"/>
+<circle class="dot" cx="710.0" cy="85.0" r="1.8"/>
+<circle class="dot" cx="710.0" cy="107.0" r="1.8"/>
+<circle class="dot" cx="710.0" cy="129.0" r="1.8"/>
+<circle class="dot" cx="710.0" cy="151.0" r="1.8"/>
+<path class="g" d="M666.0 129.0L688.0 107.0L688.0 129.0"/>
+<circle class="end" cx="666.0" cy="129.0" r="3"/>
+<circle class="end" cx="688.0" cy="129.0" r="3"/>
+<text class="t" x="677" y="174" font-size="15" font-weight="650" text-anchor="middle">K</text>
+<circle class="dot" cx="730.0" cy="85.0" r="1.8"/>
+<circle class="dot" cx="730.0" cy="107.0" r="1.8"/>
+<circle class="dot" cx="730.0" cy="129.0" r="1.8"/>
+<circle class="dot" cx="730.0" cy="151.0" r="1.8"/>
+<circle class="dot" cx="752.0" cy="85.0" r="1.8"/>
+<circle class="dot" cx="752.0" cy="107.0" r="1.8"/>
+<circle class="dot" cx="752.0" cy="129.0" r="1.8"/>
+<circle class="dot" cx="752.0" cy="151.0" r="1.8"/>
+<circle class="dot" cx="774.0" cy="85.0" r="1.8"/>
+<circle class="dot" cx="774.0" cy="107.0" r="1.8"/>
+<circle class="dot" cx="774.0" cy="129.0" r="1.8"/>
+<circle class="dot" cx="774.0" cy="151.0" r="1.8"/>
+<circle class="dot" cx="796.0" cy="85.0" r="1.8"/>
+<circle class="dot" cx="796.0" cy="107.0" r="1.8"/>
+<circle class="dot" cx="796.0" cy="129.0" r="1.8"/>
+<circle class="dot" cx="796.0" cy="151.0" r="1.8"/>
+<path class="g" d="M752.0 107.0L774.0 129.0L752.0 129.0"/>
+<circle class="end" cx="752.0" cy="107.0" r="3"/>
+<circle class="end" cx="752.0" cy="129.0" r="3"/>
+<text class="t" x="763" y="174" font-size="15" font-weight="650" text-anchor="middle">V</text>
+<line class="rule" x1="20" x2="802" y1="186" y2="186"/>
+<text class="t" x="24" y="236" font-size="20" font-weight="700">2</text>
+<text class="s" x="24" y="256" font-size="12">units², 4 letters</text>
+<circle class="dot" cx="128.0" cy="197.0" r="1.8"/>
+<circle class="dot" cx="128.0" cy="219.0" r="1.8"/>
+<circle class="dot" cx="128.0" cy="241.0" r="1.8"/>
+<circle class="dot" cx="128.0" cy="263.0" r="1.8"/>
+<circle class="dot" cx="150.0" cy="197.0" r="1.8"/>
+<circle class="dot" cx="150.0" cy="219.0" r="1.8"/>
+<circle class="dot" cx="150.0" cy="241.0" r="1.8"/>
+<circle class="dot" cx="150.0" cy="263.0" r="1.8"/>
+<circle class="dot" cx="172.0" cy="197.0" r="1.8"/>
+<circle class="dot" cx="172.0" cy="219.0" r="1.8"/>
+<circle class="dot" cx="172.0" cy="241.0" r="1.8"/>
+<circle class="dot" cx="172.0" cy="263.0" r="1.8"/>
+<circle class="dot" cx="194.0" cy="197.0" r="1.8"/>
+<circle class="dot" cx="194.0" cy="219.0" r="1.8"/>
+<circle class="dot" cx="194.0" cy="241.0" r="1.8"/>
+<circle class="dot" cx="194.0" cy="263.0" r="1.8"/>
+<path class="g" d="M150.0 219.0L150.0 241.0L172.0 241.0"/>
+<circle class="end" cx="150.0" cy="219.0" r="3"/>
+<circle class="end" cx="172.0" cy="241.0" r="3"/>
+<text class="t" x="161" y="286" font-size="15" font-weight="650" text-anchor="middle">B</text>
+<circle class="dot" cx="214.0" cy="197.0" r="1.8"/>
+<circle class="dot" cx="214.0" cy="219.0" r="1.8"/>
+<circle class="dot" cx="214.0" cy="241.0" r="1.8"/>
+<circle class="dot" cx="214.0" cy="263.0" r="1.8"/>
+<circle class="dot" cx="236.0" cy="197.0" r="1.8"/>
+<circle class="dot" cx="236.0" cy="219.0" r="1.8"/>
+<circle class="dot" cx="236.0" cy="241.0" r="1.8"/>
+<circle class="dot" cx="236.0" cy="263.0" r="1.8"/>
+<circle class="dot" cx="258.0" cy="197.0" r="1.8"/>
+<circle class="dot" cx="258.0" cy="219.0" r="1.8"/>
+<circle class="dot" cx="258.0" cy="241.0" r="1.8"/>
+<circle class="dot" cx="258.0" cy="263.0" r="1.8"/>
+<circle class="dot" cx="280.0" cy="197.0" r="1.8"/>
+<circle class="dot" cx="280.0" cy="219.0" r="1.8"/>
+<circle class="dot" cx="280.0" cy="241.0" r="1.8"/>
+<circle class="dot" cx="280.0" cy="263.0" r="1.8"/>
+<path class="g" d="M236.0 241.0L236.0 219.0L258.0 219.0"/>
+<circle class="end" cx="236.0" cy="241.0" r="3"/>
+<circle class="end" cx="258.0" cy="219.0" r="3"/>
+<text class="t" x="247" y="286" font-size="15" font-weight="650" text-anchor="middle">W</text>
+<circle class="dot" cx="300.0" cy="197.0" r="1.8"/>
+<circle class="dot" cx="300.0" cy="219.0" r="1.8"/>
+<circle class="dot" cx="300.0" cy="241.0" r="1.8"/>
+<circle class="dot" cx="300.0" cy="263.0" r="1.8"/>
+<circle class="dot" cx="322.0" cy="197.0" r="1.8"/>
+<circle class="dot" cx="322.0" cy="219.0" r="1.8"/>
+<circle class="dot" cx="322.0" cy="241.0" r="1.8"/>
+<circle class="dot" cx="322.0" cy="263.0" r="1.8"/>
+<circle class="dot" cx="344.0" cy="197.0" r="1.8"/>
+<circle class="dot" cx="344.0" cy="219.0" r="1.8"/>
+<circle class="dot" cx="344.0" cy="241.0" r="1.8"/>
+<circle class="dot" cx="344.0" cy="263.0" r="1.8"/>
+<circle class="dot" cx="366.0" cy="197.0" r="1.8"/>
+<circle class="dot" cx="366.0" cy="219.0" r="1.8"/>
+<circle class="dot" cx="366.0" cy="241.0" r="1.8"/>
+<circle class="dot" cx="366.0" cy="263.0" r="1.8"/>
+<path class="g" d="M322.0 219.0L344.0 219.0L344.0 241.0"/>
+<circle class="end" cx="322.0" cy="219.0" r="3"/>
+<circle class="end" cx="344.0" cy="241.0" r="3"/>
+<text class="t" x="333" y="286" font-size="15" font-weight="650" text-anchor="middle">P</text>
+<circle class="dot" cx="386.0" cy="197.0" r="1.8"/>
+<circle class="dot" cx="386.0" cy="219.0" r="1.8"/>
+<circle class="dot" cx="386.0" cy="241.0" r="1.8"/>
+<circle class="dot" cx="386.0" cy="263.0" r="1.8"/>
+<circle class="dot" cx="408.0" cy="197.0" r="1.8"/>
+<circle class="dot" cx="408.0" cy="219.0" r="1.8"/>
+<circle class="dot" cx="408.0" cy="241.0" r="1.8"/>
+<circle class="dot" cx="408.0" cy="263.0" r="1.8"/>
+<circle class="dot" cx="430.0" cy="197.0" r="1.8"/>
+<circle class="dot" cx="430.0" cy="219.0" r="1.8"/>
+<circle class="dot" cx="430.0" cy="241.0" r="1.8"/>
+<circle class="dot" cx="430.0" cy="263.0" r="1.8"/>
+<circle class="dot" cx="452.0" cy="197.0" r="1.8"/>
+<circle class="dot" cx="452.0" cy="219.0" r="1.8"/>
+<circle class="dot" cx="452.0" cy="241.0" r="1.8"/>
+<circle class="dot" cx="452.0" cy="263.0" r="1.8"/>
+<path class="g" d="M430.0 219.0L430.0 241.0L408.0 241.0"/>
+<circle class="end" cx="430.0" cy="219.0" r="3"/>
+<circle class="end" cx="408.0" cy="241.0" r="3"/>
+<text class="t" x="419" y="286" font-size="15" font-weight="650" text-anchor="middle">Y</text>
+<line class="rule" x1="20" x2="802" y1="298" y2="298"/>
+<text class="t" x="24" y="348" font-size="20" font-weight="700">4</text>
+<text class="s" x="24" y="368" font-size="12">units², 6 letters</text>
+<circle class="dot" cx="139.0" cy="320.0" r="1.8"/>
+<circle class="dot" cx="139.0" cy="342.0" r="1.8"/>
+<circle class="dot" cx="139.0" cy="364.0" r="1.8"/>
+<circle class="dot" cx="161.0" cy="320.0" r="1.8"/>
+<circle class="dot" cx="161.0" cy="342.0" r="1.8"/>
+<circle class="dot" cx="161.0" cy="364.0" r="1.8"/>
+<circle class="dot" cx="183.0" cy="320.0" r="1.8"/>
+<circle class="dot" cx="183.0" cy="342.0" r="1.8"/>
+<circle class="dot" cx="183.0" cy="364.0" r="1.8"/>
+<path class="g" d="M139.0 342.0L161.0 342.0L183.0 342.0"/>
+<circle class="end" cx="139.0" cy="342.0" r="3"/>
+<circle class="end" cx="183.0" cy="342.0" r="3"/>
+<text class="t" x="161" y="398" font-size="15" font-weight="650" text-anchor="middle">G</text>
+<circle class="dot" cx="225.0" cy="320.0" r="1.8"/>
+<circle class="dot" cx="225.0" cy="342.0" r="1.8"/>
+<circle class="dot" cx="225.0" cy="364.0" r="1.8"/>
+<circle class="dot" cx="247.0" cy="320.0" r="1.8"/>
+<circle class="dot" cx="247.0" cy="342.0" r="1.8"/>
+<circle class="dot" cx="247.0" cy="364.0" r="1.8"/>
+<circle class="dot" cx="269.0" cy="320.0" r="1.8"/>
+<circle class="dot" cx="269.0" cy="342.0" r="1.8"/>
+<circle class="dot" cx="269.0" cy="364.0" r="1.8"/>
+<path class="g" d="M247.0 320.0L247.0 342.0L247.0 364.0"/>
+<circle class="end" cx="247.0" cy="320.0" r="3"/>
+<circle class="end" cx="247.0" cy="364.0" r="3"/>
+<text class="t" x="247" y="398" font-size="15" font-weight="650" text-anchor="middle">F</text>
+<circle class="dot" cx="300.0" cy="320.0" r="1.8"/>
+<circle class="dot" cx="300.0" cy="342.0" r="1.8"/>
+<circle class="dot" cx="300.0" cy="364.0" r="1.8"/>
+<circle class="dot" cx="322.0" cy="320.0" r="1.8"/>
+<circle class="dot" cx="322.0" cy="342.0" r="1.8"/>
+<circle class="dot" cx="322.0" cy="364.0" r="1.8"/>
+<circle class="dot" cx="344.0" cy="320.0" r="1.8"/>
+<circle class="dot" cx="344.0" cy="342.0" r="1.8"/>
+<circle class="dot" cx="344.0" cy="364.0" r="1.8"/>
+<circle class="dot" cx="366.0" cy="320.0" r="1.8"/>
+<circle class="dot" cx="366.0" cy="342.0" r="1.8"/>
+<circle class="dot" cx="366.0" cy="364.0" r="1.8"/>
+<path class="g" d="M322.0 320.0L344.0 342.0L322.0 364.0"/>
+<circle class="end" cx="322.0" cy="320.0" r="3"/>
+<circle class="end" cx="322.0" cy="364.0" r="3"/>
+<text class="t" x="333" y="398" font-size="15" font-weight="650" text-anchor="middle">M</text>
+<circle class="dot" cx="397.0" cy="309.0" r="1.8"/>
+<circle class="dot" cx="397.0" cy="331.0" r="1.8"/>
+<circle class="dot" cx="397.0" cy="353.0" r="1.8"/>
+<circle class="dot" cx="397.0" cy="375.0" r="1.8"/>
+<circle class="dot" cx="419.0" cy="309.0" r="1.8"/>
+<circle class="dot" cx="419.0" cy="331.0" r="1.8"/>
+<circle class="dot" cx="419.0" cy="353.0" r="1.8"/>
+<circle class="dot" cx="419.0" cy="375.0" r="1.8"/>
+<circle class="dot" cx="441.0" cy="309.0" r="1.8"/>
+<circle class="dot" cx="441.0" cy="331.0" r="1.8"/>
+<circle class="dot" cx="441.0" cy="353.0" r="1.8"/>
+<circle class="dot" cx="441.0" cy="375.0" r="1.8"/>
+<path class="g" d="M397.0 331.0L419.0 353.0L441.0 331.0"/>
+<circle class="end" cx="397.0" cy="331.0" r="3"/>
+<circle class="end" cx="441.0" cy="331.0" r="3"/>
+<text class="t" x="419" y="398" font-size="15" font-weight="650" text-anchor="middle">C</text>
+<circle class="dot" cx="483.0" cy="309.0" r="1.8"/>
+<circle class="dot" cx="483.0" cy="331.0" r="1.8"/>
+<circle class="dot" cx="483.0" cy="353.0" r="1.8"/>
+<circle class="dot" cx="483.0" cy="375.0" r="1.8"/>
+<circle class="dot" cx="505.0" cy="309.0" r="1.8"/>
+<circle class="dot" cx="505.0" cy="331.0" r="1.8"/>
+<circle class="dot" cx="505.0" cy="353.0" r="1.8"/>
+<circle class="dot" cx="505.0" cy="375.0" r="1.8"/>
+<circle class="dot" cx="527.0" cy="309.0" r="1.8"/>
+<circle class="dot" cx="527.0" cy="331.0" r="1.8"/>
+<circle class="dot" cx="527.0" cy="353.0" r="1.8"/>
+<circle class="dot" cx="527.0" cy="375.0" r="1.8"/>
+<path class="g" d="M483.0 353.0L505.0 331.0L527.0 353.0"/>
+<circle class="end" cx="483.0" cy="353.0" r="3"/>
+<circle class="end" cx="527.0" cy="353.0" r="3"/>
+<text class="t" x="505" y="398" font-size="15" font-weight="650" text-anchor="middle">U</text>
+<circle class="dot" cx="558.0" cy="320.0" r="1.8"/>
+<circle class="dot" cx="558.0" cy="342.0" r="1.8"/>
+<circle class="dot" cx="558.0" cy="364.0" r="1.8"/>
+<circle class="dot" cx="580.0" cy="320.0" r="1.8"/>
+<circle class="dot" cx="580.0" cy="342.0" r="1.8"/>
+<circle class="dot" cx="580.0" cy="364.0" r="1.8"/>
+<circle class="dot" cx="602.0" cy="320.0" r="1.8"/>
+<circle class="dot" cx="602.0" cy="342.0" r="1.8"/>
+<circle class="dot" cx="602.0" cy="364.0" r="1.8"/>
+<circle class="dot" cx="624.0" cy="320.0" r="1.8"/>
+<circle class="dot" cx="624.0" cy="342.0" r="1.8"/>
+<circle class="dot" cx="624.0" cy="364.0" r="1.8"/>
+<path class="g" d="M602.0 320.0L580.0 342.0L602.0 364.0"/>
+<circle class="end" cx="602.0" cy="320.0" r="3"/>
+<circle class="end" cx="602.0" cy="364.0" r="3"/>
+<text class="t" x="591" y="398" font-size="15" font-weight="650" text-anchor="middle">L</text>
+<line class="rule" x1="20" x2="802" y1="410" y2="410"/>
+<text class="t" x="24" y="460" font-size="20" font-weight="700">5</text>
+<text class="s" x="24" y="480" font-size="12">units², 8 letters</text>
+<circle class="dot" cx="128.0" cy="432.0" r="1.8"/>
+<circle class="dot" cx="128.0" cy="454.0" r="1.8"/>
+<circle class="dot" cx="128.0" cy="476.0" r="1.8"/>
+<circle class="dot" cx="150.0" cy="432.0" r="1.8"/>
+<circle class="dot" cx="150.0" cy="454.0" r="1.8"/>
+<circle class="dot" cx="150.0" cy="476.0" r="1.8"/>
+<circle class="dot" cx="172.0" cy="432.0" r="1.8"/>
+<circle class="dot" cx="172.0" cy="454.0" r="1.8"/>
+<circle class="dot" cx="172.0" cy="476.0" r="1.8"/>
+<circle class="dot" cx="194.0" cy="432.0" r="1.8"/>
+<circle class="dot" cx="194.0" cy="454.0" r="1.8"/>
+<circle class="dot" cx="194.0" cy="476.0" r="1.8"/>
+<path class="g" d="M172.0 432.0L150.0 454.0L150.0 476.0"/>
+<circle class="end" cx="172.0" cy="432.0" r="3"/>
+<circle class="end" cx="150.0" cy="476.0" r="3"/>
+<text class="t" x="161" y="510" font-size="15" font-weight="650" text-anchor="middle">D</text>
+<circle class="dot" cx="225.0" cy="421.0" r="1.8"/>
+<circle class="dot" cx="225.0" cy="443.0" r="1.8"/>
+<circle class="dot" cx="225.0" cy="465.0" r="1.8"/>
+<circle class="dot" cx="225.0" cy="487.0" r="1.8"/>
+<circle class="dot" cx="247.0" cy="421.0" r="1.8"/>
+<circle class="dot" cx="247.0" cy="443.0" r="1.8"/>
+<circle class="dot" cx="247.0" cy="465.0" r="1.8"/>
+<circle class="dot" cx="247.0" cy="487.0" r="1.8"/>
+<circle class="dot" cx="269.0" cy="421.0" r="1.8"/>
+<circle class="dot" cx="269.0" cy="443.0" r="1.8"/>
+<circle class="dot" cx="269.0" cy="465.0" r="1.8"/>
+<circle class="dot" cx="269.0" cy="487.0" r="1.8"/>
+<path class="g" d="M225.0 443.0L247.0 443.0L269.0 465.0"/>
+<circle class="end" cx="225.0" cy="443.0" r="3"/>
+<circle class="end" cx="269.0" cy="465.0" r="3"/>
+<text class="t" x="247" y="510" font-size="15" font-weight="650" text-anchor="middle">H</text>
+<circle class="dot" cx="300.0" cy="432.0" r="1.8"/>
+<circle class="dot" cx="300.0" cy="454.0" r="1.8"/>
+<circle class="dot" cx="300.0" cy="476.0" r="1.8"/>
+<circle class="dot" cx="322.0" cy="432.0" r="1.8"/>
+<circle class="dot" cx="322.0" cy="454.0" r="1.8"/>
+<circle class="dot" cx="322.0" cy="476.0" r="1.8"/>
+<circle class="dot" cx="344.0" cy="432.0" r="1.8"/>
+<circle class="dot" cx="344.0" cy="454.0" r="1.8"/>
+<circle class="dot" cx="344.0" cy="476.0" r="1.8"/>
+<circle class="dot" cx="366.0" cy="432.0" r="1.8"/>
+<circle class="dot" cx="366.0" cy="454.0" r="1.8"/>
+<circle class="dot" cx="366.0" cy="476.0" r="1.8"/>
+<path class="g" d="M344.0 432.0L344.0 454.0L322.0 476.0"/>
+<circle class="end" cx="344.0" cy="432.0" r="3"/>
+<circle class="end" cx="322.0" cy="476.0" r="3"/>
+<text class="t" x="333" y="510" font-size="15" font-weight="650" text-anchor="middle">S</text>
+<circle class="dot" cx="397.0" cy="421.0" r="1.8"/>
+<circle class="dot" cx="397.0" cy="443.0" r="1.8"/>
+<circle class="dot" cx="397.0" cy="465.0" r="1.8"/>
+<circle class="dot" cx="397.0" cy="487.0" r="1.8"/>
+<circle class="dot" cx="419.0" cy="421.0" r="1.8"/>
+<circle class="dot" cx="419.0" cy="443.0" r="1.8"/>
+<circle class="dot" cx="419.0" cy="465.0" r="1.8"/>
+<circle class="dot" cx="419.0" cy="487.0" r="1.8"/>
+<circle class="dot" cx="441.0" cy="421.0" r="1.8"/>
+<circle class="dot" cx="441.0" cy="443.0" r="1.8"/>
+<circle class="dot" cx="441.0" cy="465.0" r="1.8"/>
+<circle class="dot" cx="441.0" cy="487.0" r="1.8"/>
+<path class="g" d="M397.0 443.0L419.0 465.0L441.0 465.0"/>
+<circle class="end" cx="397.0" cy="443.0" r="3"/>
+<circle class="end" cx="441.0" cy="465.0" r="3"/>
+<text class="t" x="419" y="510" font-size="15" font-weight="650" text-anchor="middle">I</text>
+<circle class="dot" cx="472.0" cy="432.0" r="1.8"/>
+<circle class="dot" cx="472.0" cy="454.0" r="1.8"/>
+<circle class="dot" cx="472.0" cy="476.0" r="1.8"/>
+<circle class="dot" cx="494.0" cy="432.0" r="1.8"/>
+<circle class="dot" cx="494.0" cy="454.0" r="1.8"/>
+<circle class="dot" cx="494.0" cy="476.0" r="1.8"/>
+<circle class="dot" cx="516.0" cy="432.0" r="1.8"/>
+<circle class="dot" cx="516.0" cy="454.0" r="1.8"/>
+<circle class="dot" cx="516.0" cy="476.0" r="1.8"/>
+<circle class="dot" cx="538.0" cy="432.0" r="1.8"/>
+<circle class="dot" cx="538.0" cy="454.0" r="1.8"/>
+<circle class="dot" cx="538.0" cy="476.0" r="1.8"/>
+<path class="g" d="M494.0 432.0L516.0 454.0L516.0 476.0"/>
+<circle class="end" cx="494.0" cy="432.0" r="3"/>
+<circle class="end" cx="516.0" cy="476.0" r="3"/>
+<text class="t" x="505" y="510" font-size="15" font-weight="650" text-anchor="middle">R</text>
+<circle class="dot" cx="569.0" cy="421.0" r="1.8"/>
+<circle class="dot" cx="569.0" cy="443.0" r="1.8"/>
+<circle class="dot" cx="569.0" cy="465.0" r="1.8"/>
+<circle class="dot" cx="569.0" cy="487.0" r="1.8"/>
+<circle class="dot" cx="591.0" cy="421.0" r="1.8"/>
+<circle class="dot" cx="591.0" cy="443.0" r="1.8"/>
+<circle class="dot" cx="591.0" cy="465.0" r="1.8"/>
+<circle class="dot" cx="591.0" cy="487.0" r="1.8"/>
+<circle class="dot" cx="613.0" cy="421.0" r="1.8"/>
+<circle class="dot" cx="613.0" cy="443.0" r="1.8"/>
+<circle class="dot" cx="613.0" cy="465.0" r="1.8"/>
+<circle class="dot" cx="613.0" cy="487.0" r="1.8"/>
+<path class="g" d="M569.0 465.0L591.0 465.0L613.0 443.0"/>
+<circle class="end" cx="569.0" cy="465.0" r="3"/>
+<circle class="end" cx="613.0" cy="443.0" r="3"/>
+<text class="t" x="591" y="510" font-size="15" font-weight="650" text-anchor="middle">N</text>
+<circle class="dot" cx="644.0" cy="432.0" r="1.8"/>
+<circle class="dot" cx="644.0" cy="454.0" r="1.8"/>
+<circle class="dot" cx="644.0" cy="476.0" r="1.8"/>
+<circle class="dot" cx="666.0" cy="432.0" r="1.8"/>
+<circle class="dot" cx="666.0" cy="454.0" r="1.8"/>
+<circle class="dot" cx="666.0" cy="476.0" r="1.8"/>
+<circle class="dot" cx="688.0" cy="432.0" r="1.8"/>
+<circle class="dot" cx="688.0" cy="454.0" r="1.8"/>
+<circle class="dot" cx="688.0" cy="476.0" r="1.8"/>
+<circle class="dot" cx="710.0" cy="432.0" r="1.8"/>
+<circle class="dot" cx="710.0" cy="454.0" r="1.8"/>
+<circle class="dot" cx="710.0" cy="476.0" r="1.8"/>
+<path class="g" d="M666.0 432.0L666.0 454.0L688.0 476.0"/>
+<circle class="end" cx="666.0" cy="432.0" r="3"/>
+<circle class="end" cx="688.0" cy="476.0" r="3"/>
+<text class="t" x="677" y="510" font-size="15" font-weight="650" text-anchor="middle">O</text>
+<circle class="dot" cx="741.0" cy="421.0" r="1.8"/>
+<circle class="dot" cx="741.0" cy="443.0" r="1.8"/>
+<circle class="dot" cx="741.0" cy="465.0" r="1.8"/>
+<circle class="dot" cx="741.0" cy="487.0" r="1.8"/>
+<circle class="dot" cx="763.0" cy="421.0" r="1.8"/>
+<circle class="dot" cx="763.0" cy="443.0" r="1.8"/>
+<circle class="dot" cx="763.0" cy="465.0" r="1.8"/>
+<circle class="dot" cx="763.0" cy="487.0" r="1.8"/>
+<circle class="dot" cx="785.0" cy="421.0" r="1.8"/>
+<circle class="dot" cx="785.0" cy="443.0" r="1.8"/>
+<circle class="dot" cx="785.0" cy="465.0" r="1.8"/>
+<circle class="dot" cx="785.0" cy="487.0" r="1.8"/>
+<path class="g" d="M741.0 465.0L763.0 443.0L785.0 443.0"/>
+<circle class="end" cx="741.0" cy="465.0" r="3"/>
+<circle class="end" cx="785.0" cy="443.0" r="3"/>
+<text class="t" x="763" y="510" font-size="15" font-weight="650" text-anchor="middle">A</text>
+<line class="rule" x1="20" x2="802" y1="522" y2="522"/>
+<text class="t" x="24" y="572" font-size="20" font-weight="700">8</text>
+<text class="s" x="24" y="592" font-size="12">units², 2 letters</text>
+<circle class="dot" cx="139.0" cy="544.0" r="1.8"/>
+<circle class="dot" cx="139.0" cy="566.0" r="1.8"/>
+<circle class="dot" cx="139.0" cy="588.0" r="1.8"/>
+<circle class="dot" cx="161.0" cy="544.0" r="1.8"/>
+<circle class="dot" cx="161.0" cy="566.0" r="1.8"/>
+<circle class="dot" cx="161.0" cy="588.0" r="1.8"/>
+<circle class="dot" cx="183.0" cy="544.0" r="1.8"/>
+<circle class="dot" cx="183.0" cy="566.0" r="1.8"/>
+<circle class="dot" cx="183.0" cy="588.0" r="1.8"/>
+<path class="g" d="M139.0 544.0L161.0 566.0L183.0 588.0"/>
+<circle class="end" cx="139.0" cy="544.0" r="3"/>
+<circle class="end" cx="183.0" cy="588.0" r="3"/>
+<text class="t" x="161" y="622" font-size="15" font-weight="650" text-anchor="middle">T</text>
+<circle class="dot" cx="225.0" cy="544.0" r="1.8"/>
+<circle class="dot" cx="225.0" cy="566.0" r="1.8"/>
+<circle class="dot" cx="225.0" cy="588.0" r="1.8"/>
+<circle class="dot" cx="247.0" cy="544.0" r="1.8"/>
+<circle class="dot" cx="247.0" cy="566.0" r="1.8"/>
+<circle class="dot" cx="247.0" cy="588.0" r="1.8"/>
+<circle class="dot" cx="269.0" cy="544.0" r="1.8"/>
+<circle class="dot" cx="269.0" cy="566.0" r="1.8"/>
+<circle class="dot" cx="269.0" cy="588.0" r="1.8"/>
+<path class="g" d="M225.0 588.0L247.0 566.0L269.0 544.0"/>
+<circle class="end" cx="225.0" cy="588.0" r="3"/>
+<circle class="end" cx="269.0" cy="544.0" r="3"/>
+<text class="t" x="247" y="622" font-size="15" font-weight="650" text-anchor="middle">E</text>
+</svg>
