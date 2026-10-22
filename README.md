@@ -7,7 +7,10 @@
 A script in which every letter is two steps on a square grid, and every word is
 one unbroken line. A pen on the grid can step in eight directions; two steps
 that don't double back make exactly 28 shapes, and the alphabet uses all of
-them: A–Z, KH, and a 28th drawn in the chart as a marked R (Ř). Each shape can
+them, assigned so that the distance between a letter's two ends follows how
+common it is in English: T and E, the most common, reach furthest, which keeps
+a sentence moving across the page and makes it easier to write. The letters
+are A–Z, KH, and a 28th drawn in the chart as a marked R (Ř). Each shape can
 be traced either way, so the writer picks a direction for each letter to keep
 the line going; a reader needs only the starting dot.
 
