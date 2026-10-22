@@ -1,5 +1,5 @@
-// node test.js: checks the alphabet, the writer and the reader, and that the four
-// SVGs are what make_chart.js, make_fox.js, make_article.js and make_coords.js draw now.
+// node test.js: checks the alphabet, the writer and the reader, and that the three
+// SVGs are what make_chart.js, make_article.js and make_coords.js draw now.
 const fs = require('fs');
 const { execFileSync } = require('child_process');
 const g = require('./gernreich.js');
@@ -33,7 +33,7 @@ for (const t of ['the quick red fox jumped over the lazy brown dog', 'Michael Ca
 }
 check('KH is one letter', g.letters('khaki').join(',') === 'KH,A,K,I');
 
-for (const [script, file] of [['make_chart.js', 'images/alphabet.svg'], ['make_fox.js', 'images/fox.svg'], ['make_article.js', 'images/article-1-claude.svg'], ['make_coords.js', 'images/coordinates.svg']]) {
+for (const [script, file] of [['make_chart.js', 'images/alphabet.svg'], ['make_article.js', 'images/article-1-claude.svg'], ['make_coords.js', 'images/coordinates.svg']]) {
   const before = fs.readFileSync(file, 'utf8');
   execFileSync('node', [script], { stdio: 'ignore' });
   check(`${file} is what ${script} draws`, fs.readFileSync(file, 'utf8') === before);

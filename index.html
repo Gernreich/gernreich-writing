@@ -139,13 +139,6 @@ of the line to go on. Every two steps is read as a letter.</p>
 <h2 id="writings">Michael's writings</h2>
 <p>Michael's longer pieces, redrawn with the chart's letters.</p>
 
-<figure>
-  <img src="images/fox.svg" width="646" height="514" style="border:0;background:none" alt="The quick red fox jumped over the lazy brown dog, a word to a line, each word starting at a red dot">
-  <figcaption><strong>THE QUICK RED FOX JUMPED OVER THE LAZY BROWN DOG</strong>, a word to a
-  line, each starting at its dot (<code>make_fox.js</code>).
-  <a href="#" data-write="the quick red fox jumped over the lazy brown dog">Draw it another way</a>.</figcaption>
-</figure>
-
 <h3>Article 1</h3>
 <figure>
   <img src="images/article-1-claude.svg" width="672" height="780" style="border:0;background:none" alt="Article 1 as one coloured line that works its way down the image in rough rows, from a dot at the top left to an arrow at the bottom">
@@ -217,7 +210,7 @@ ONE. As in Michael's own drawings, G and W are drawn the other way round from th
 <footer>
   <a href="https://github.com/Gernreich/gernreich-writing">Repository</a> ·
   <code>gernreich.js</code> holds the alphabet, the writer and the reader;
-  <code>make_chart.js</code>, <code>make_fox.js</code>, <code>make_article.js</code> and <code>make_coords.js</code> draw the SVGs;
+  <code>make_chart.js</code>, <code>make_article.js</code> and <code>make_coords.js</code> draw the SVGs;
   <code>node test.js</code> checks all of them.
 </footer>
 </main>
@@ -275,12 +268,6 @@ ONE. As in Michael's own drawings, G and W are drawn the other way round from th
   $('mode-one').addEventListener('click', () => setMode('one'));
   $('again').addEventListener('click', render);
   $('text').addEventListener('input', render);
-  document.querySelectorAll('[data-write]').forEach(a => a.addEventListener('click', ev => {
-    ev.preventDefault();
-    $('text').value = a.dataset.write;
-    setMode(a.dataset.mode || 'words');
-    $('text').scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }));
   render();
 
   // ---- the reader
