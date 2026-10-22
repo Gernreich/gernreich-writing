@@ -219,6 +219,14 @@ Read as Gernreich writing, the two lines spell out a GPS position in words.</p>
   <strong>DOUBLE O FOUR · FIFTY SIX · SEVEN HUNDRED FORTY ONE</strong>, that is
   004° 56.741′ east.</li>
 </ul>
+<figure>
+  <img src="images/coordinates.svg" width="408" height="684" style="border:0;background:none" alt="The two lines redrawn on a grid: the left one running up from a red dot to an arrow, the right one running down from a red dot to an arrow, with small dots at the breaks between numbers">
+  <figcaption>The two lines redrawn with the chart's letters (<code>make_coords.js</code>,
+  by Claude Code). Only the G of EIGHT and the W of TWO change, from the corner and the
+  straight line to the chart's shapes; every other letter keeps the direction Michael
+  drew it in, and the right line is still upside down. Small dots mark the breaks between
+  the numbers.</figcaption>
+</figure>
 <p>Together: <strong>N 51° 09.872′, E 004° 56.741′</strong>, at Velveken, between Geel
 and Laakdal in the province of Antwerp, Belgium. The dots inside the lines mark breaks
 between the numbers.</p>
@@ -226,7 +234,7 @@ between the numbers.</p>
 letters as drawn. On the right, one vertical stroke near the bottom measures about one
 and a half squares in the photo; it is read as two, the only length that gives FORTY
 ONE. As in Michael's other drawings, G and W are drawn the other way round from the chart
-(EIGHT has the corner).</p>
+(EIGHT has the corner, TWO the straight line).</p>
 
 <p><code>originals/angular.DRW</code> is the drawing the chart came from, made in TopDraw
 2.00 on NeXT.</p>
@@ -234,7 +242,7 @@ ONE. As in Michael's other drawings, G and W are drawn the other way round from 
 <footer>
   <a href="https://github.com/Gernreich/gernreich-writing">Repository</a> ·
   <code>gernreich.js</code> holds the alphabet, the writer and the reader;
-  <code>make_chart.js</code>, <code>make_fox.js</code> and <code>make_article.js</code> draw the SVGs;
+  <code>make_chart.js</code>, <code>make_fox.js</code>, <code>make_article.js</code> and <code>make_coords.js</code> draw the SVGs;
   <code>node test.js</code> checks all of them.
 </footer>
 </main>
