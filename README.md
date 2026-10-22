@@ -26,7 +26,7 @@ all redrawn with the chart's letters) are by Claude Code.
 | `gernreich.js` | the alphabet table, `write` (text to path) and `read` (path to text) |
 | `make_chart.js` | draws `images/alphabet.svg` from the table |
 | `make_article.js` | draws `images/article-1-claude.svg`: Article 1 of the Universal Declaration of Human Rights as one line |
-| `test.js` | `node test.js`: the table, Michael's samples read back, round trips, and both SVGs reproduce |
+| `test.js` | `node test.js`: the table, Michael's samples read back, round trips, and all four SVGs reproduce |
 | `make_coords.js` | draws `images/coordinates.svg`: the two graph-paper lines (a GPS position) with the chart's letters |
 | `make_fox.js` | draws `images/fox.svg`: the fox sentence, a word to a line |
 | `images/` | the drawings above, and the map loop redrawn over its map |

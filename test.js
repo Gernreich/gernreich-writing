@@ -1,5 +1,5 @@
-// node test.js: checks the alphabet, the writer and the reader, and that the two
-// SVGs are what make_chart.js and make_article.js draw now.
+// node test.js: checks the alphabet, the writer and the reader, and that the four
+// SVGs are what make_chart.js, make_fox.js, make_article.js and make_coords.js draw now.
 const fs = require('fs');
 const { execFileSync } = require('child_process');
 const g = require('./gernreich.js');
