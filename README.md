@@ -17,7 +17,7 @@ the line going; a reader needs only the starting dot.
 **Whose work this is.** The Gernreich writing, its alphabet and the drawings in
 `images/` that are not SVG, and `originals/angular.DRW` (TopDraw 2.00, NeXT), are
 Michael Carnright's. `gernreich.js` (writer and reader), the redrawn chart
-`images/alphabet.svg`, `images/fox.svg` and the Article 1 drawing
+`images/alphabet.svg`, `images/fox.svg`, the map redrawing `images/map-loop.jpg` and the Article 1 drawing
 `images/article-1-claude.svg` are by Claude Code.
 
 | Path | What |
@@ -28,7 +28,7 @@ Michael Carnright's. `gernreich.js` (writer and reader), the redrawn chart
 | `make_article.js` | draws `images/article-1-claude.svg`: Article 1 of the Universal Declaration of Human Rights as one line |
 | `test.js` | `node test.js`: the table, Michael's samples read back, round trips, and both SVGs reproduce |
 | `make_fox.js` | draws `images/fox.svg`: the fox sentence, a word to a line |
-| `images/` | the original chart and samples (ONE, GOUD) |
+| `images/` | the original chart and samples (ONE, GOUD), and the map loop redrawn |
 | `originals/angular.DRW` | the drawing the chart came from |
 
 Released under [CC0 1.0](LICENSE).
