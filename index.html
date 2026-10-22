@@ -137,8 +137,8 @@ of the line to go on. Every two steps is read as a letter.</p>
 </div>
 
 <h2 id="originals">The originals</h2>
-<p>The alphabet chart and the samples as Michael drew them. The chart is the reference:
-two of the longer samples draw a pair of letters the other way round, noted under each.</p>
+<p>The alphabet chart and samples as Michael drew them, and the longer pieces written
+out with the chart's letters.</p>
 
 <figure>
   <img src="images/alphabet-chart.png" width="552" height="414" alt="The alphabet chart: 28 two-step shapes in five rows, labelled with letters and with sqr(1), sqr(2), sqr(4), sqr(5) and sqr(8)">
@@ -160,45 +160,32 @@ two of the longer samples draw a pair of letters the other way round, noted unde
 </div>
 
 <figure>
-  <img src="images/fox.png" width="554" height="583" alt="Ten word paths down the left and one long path of the whole sentence">
-  <figcaption><strong>THE QUICK RED FOX JUMPED OVER THE LAZY BROWN DOG</strong>, a word at a
-  time down the left and as one line on the right. G and W are drawn the other way round
-  from the chart, so DOG ends in the corner and BROWN has the straight line.
-  <a href="#" data-write="the quick red fox jumped over the lazy brown dog">Redraw it with the chart's letters</a>.</figcaption>
+  <img src="images/fox.svg" width="646" height="514" style="border:0;background:none" alt="The quick red fox jumped over the lazy brown dog, a word to a line, each word starting at a red dot">
+  <figcaption><strong>THE QUICK RED FOX JUMPED OVER THE LAZY BROWN DOG</strong>, a word to a
+  line, each starting at its dot (<code>make_fox.js</code>).
+  <a href="#" data-write="the quick red fox jumped over the lazy brown dog">Draw it another way</a>.</figcaption>
 </figure>
 
+<h3>Article 1</h3>
 <figure>
-  <img src="images/article-1.png" width="1006" height="907" alt="One long coloured path that winds across the whole image, starting at an arrow">
+  <img src="images/article-1-claude.svg" width="672" height="780" style="border:0;background:none" alt="Article 1 as one coloured line that works its way down the image in rough rows, from a dot at the top left to an arrow at the bottom">
   <figcaption><strong>Article 1 of the Universal Declaration of Human Rights</strong>, as one
   line: "All human beings are born free and equal in dignity and rights. They are endowed
   with reason and conscience and should act towards one another in a spirit of
-  brotherhood." Drawn with T and E swapped, and G and W swapped, so "brotherhood" reads
-  BROEHTRHOOD by the chart.
-  <a href="#" data-write="All human beings are born free and equal in dignity and rights. They are endowed with reason and conscience and should act towards one another in a spirit of brotherhood." data-mode="one">Redraw it with the chart's letters</a>.</figcaption>
-</figure>
-
-<h3>Article 1, drawn by Claude Code</h3>
-<figure>
-  <img src="images/article-1-claude.svg" width="672" height="780" style="border:0;background:none" alt="Article 1 as one coloured line that works its way down the image in rough rows, from a dot at the top left to an arrow at the bottom">
-  <figcaption>The same 139 letters with the chart's letters, as a version of Michael's
-  drawing above by Claude Code. Each word has its own colour, and the line starts at
+  brotherhood." Michael wrote it as one line; this drawing of it is by Claude Code.
+  Each word has its own colour, and the line starts at
   the dot and ends at the arrow. A beam search chooses which way to trace each letter
   so that the line works back and forth in rows without ever crossing or touching
   itself (<code>make_article.js</code>). Hover over a word to see it.</figcaption>
 </figure>
 
-<figure>
-  <img src="images/gernloop.jpg" width="640" height="484" alt="A closed path of the script drawn over an old map titled Tabula Nova Partis Africae, on paper with burnt edges, with red crosses along it">
-  <figcaption>A closed loop of the writing over an old map (<em>Tabula Nova Partis
-  Africae</em>), with red crosses along it. Traced step by step, the loop is 66 steps,
-  33 letters. Read clockwise, with G and W swapped as in the fox sentence and Article 1,
-  it says:
-  <span style="display:block;margin:6px 0;font-weight:650;letter-spacing:0.04em;color:var(--ink)">…I DID NOT FIND IT. HAVE I <span title="uncertain" style="text-decoration:underline dotted">HAID</span> ENOUGH? <span title="uncertain" style="text-decoration:underline dotted">CAE</span> HARD…</span>
-  The dotted words are uncertain: HAID is drawn H A I D, perhaps meant as "hid"; CAE is
-  drawn C A E, perhaps part of "cache". With no start dot the sentence wraps round the
-  loop, so it could also begin "IT HAVE I…". The red crosses fall between letter
-  boundaries, so they are not spaces, and may mark places on the map.</figcaption>
-</figure>
+<h3>The map loop</h3>
+<p>Michael also wrote a sentence as a closed loop over an old map. Read with the chart's
+letters, the loop says:</p>
+<p style="font-weight:650;letter-spacing:0.04em">…I DID NOT FIND IT. HAVE I <span title="uncertain" style="text-decoration:underline dotted">HAID</span> ENOUGH? <span title="uncertain" style="text-decoration:underline dotted">CAE</span> HARD…</p>
+<p class="hint">The dotted words are uncertain: HAID is drawn H A I D, perhaps meant as
+"hid"; CAE is drawn C A E, perhaps part of "cache". A loop has no start dot, so the
+sentence wraps round, and could also begin "IT HAVE I…".</p>
 
 <p><code>originals/angular.DRW</code> is the drawing the chart came from, made in TopDraw
 2.00 on NeXT.</p>
@@ -206,7 +193,7 @@ two of the longer samples draw a pair of letters the other way round, noted unde
 <footer>
   <a href="https://github.com/Gernreich/gernreich-writing">Repository</a> ·
   <code>gernreich.js</code> holds the alphabet, the writer and the reader;
-  <code>make_chart.js</code> and <code>make_article.js</code> draw the two SVGs;
+  <code>make_chart.js</code>, <code>make_fox.js</code> and <code>make_article.js</code> draw the SVGs;
   <code>node test.js</code> checks all of them.
 </footer>
 </main>

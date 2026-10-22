@@ -33,7 +33,7 @@ for (const t of ['the quick red fox jumped over the lazy brown dog', 'Michael Ca
 }
 check('KH is one letter', g.letters('khaki').join(',') === 'KH,A,K,I');
 
-for (const [script, file] of [['make_chart.js', 'images/alphabet.svg'], ['make_article.js', 'images/article-1-claude.svg']]) {
+for (const [script, file] of [['make_chart.js', 'images/alphabet.svg'], ['make_fox.js', 'images/fox.svg'], ['make_article.js', 'images/article-1-claude.svg']]) {
   const before = fs.readFileSync(file, 'utf8');
   execFileSync('node', [script], { stdio: 'ignore' });
   check(`${file} is what ${script} draws`, fs.readFileSync(file, 'utf8') === before);
