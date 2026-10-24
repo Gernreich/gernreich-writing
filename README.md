@@ -23,7 +23,7 @@ all redrawn with the chart's letters) are by Claude Code.
 | Path | What |
 |---|---|
 | `index.html` | the writeup, with a live writer and reader |
-| `gernreich.js` | the alphabet table, `write` (text to path) and `read` (path to text) |
+| `gernreich.js` | the alphabet table, `write` (text to path), `read` (path to text), and `snake` and `snakeSVG`, which draw Article 1 as one line (the page redraws it a different way on each click) |
 | `make_chart.js` | draws `images/alphabet.svg` from the table |
 | `make_article.js` | draws `images/article-1-claude.svg`: Article 1 of the Universal Declaration of Human Rights as one line |
 | `test.js` | `node test.js`: the table, Michael's samples read back, round trips, and all three SVGs reproduce |

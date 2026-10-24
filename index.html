@@ -15,16 +15,19 @@
   --accent: #2a78d6;
   --start: #e34948;
   --grid: #d6d5cf;
+  --w0: #2a78d6; --w1: #e34948; --w2: #1e9e6a; --w3: #c26a00; --w4: #8a4fd8; --w5: #0f8ea0; --w6: #d23f8c; --w7: #6b7f00;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #1a1a19; --surface: #252523; --ink: #f0efec; --ink-2: #c3c2b7; --rule: #3a3a37;
     --accent: #3987e5; --start: #e66767; --grid: #45453f;
+    --w0: #5aa0ef; --w1: #f07574; --w2: #3cc48b; --w3: #eda100; --w4: #a97ff0; --w5: #2fb9cc; --w6: #ef6aac; --w7: #a3bd1f;
   }
 }
 :root[data-theme="dark"] {
   --bg: #1a1a19; --surface: #252523; --ink: #f0efec; --ink-2: #c3c2b7; --rule: #3a3a37;
   --accent: #3987e5; --start: #e66767; --grid: #45453f;
+  --w0: #5aa0ef; --w1: #f07574; --w2: #3cc48b; --w3: #eda100; --w4: #a97ff0; --w5: #2fb9cc; --w6: #ef6aac; --w7: #a3bd1f;
 }
 * { box-sizing: border-box; }
 body {
@@ -50,6 +53,7 @@ button:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent);
 .out { width: 100%; display: block; margin-top: 12px; }
 .out .ln { fill: none; stroke: var(--ink); stroke-width: 0.12; stroke-linecap: round; stroke-linejoin: round; }
 .out .dot { fill: var(--start); }
+.out .w0 { stroke: var(--w0); } .out .w1 { stroke: var(--w1); } .out .w2 { stroke: var(--w2); } .out .w3 { stroke: var(--w3); } .out .w4 { stroke: var(--w4); } .out .w5 { stroke: var(--w5); } .out .w6 { stroke: var(--w6); } .out .w7 { stroke: var(--w7); }
 .hint { font-size: 0.85rem; color: var(--ink-2); margin-top: 8px; }
 #pad { width: 100%; max-width: 560px; display: block; margin-top: 12px; touch-action: manipulation; cursor: pointer; }
 #pad .pt { fill: var(--grid); }
@@ -61,6 +65,8 @@ button:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent);
 
 figure { margin: 20px 0; }
 figure img { max-width: 100%; height: auto; display: block; border: 1px solid var(--rule); border-radius: 6px; background: #fff; }
+.redraw { display: block; max-width: 100%; padding: 0; border: 0; border-radius: 10px; background: none; cursor: pointer; }
+.redraw img, .redraw svg { display: block; max-width: 100%; height: auto; }
 figcaption { font-size: 0.9rem; color: var(--ink-2); margin-top: 6px; }
 .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
 @media (max-width: 600px) { .pair { grid-template-columns: minmax(0, 1fr); } }
@@ -69,8 +75,8 @@ footer { margin-top: 56px; padding-top: 16px; border-top: 1px solid var(--rule);
 </head>
 <body>
 <main>
-<p style="margin:0 0 12px;font-size:0.95rem"><a href="https://gernreich.github.io/">← All projects</a></p>
 <h1>Gernreich writing</h1>
+<p style="margin:0 0 12px;font-size:0.95rem"><strong><a href="https://gernreich.github.io/">← All projects</a></strong></p>
 <p class="lede">A script in which every letter is two steps on a square grid, and every
 word is one unbroken line. Each letter starts where the one before it ended, so a
 sentence draws itself as a single path that wanders across the page.</p>
@@ -109,7 +115,9 @@ up on itself, which makes the writing easier to create.</p>
 <h2>Write</h2>
 <p>Type anything. Letters outside the alphabet are left out; KH is written as one letter.
 Every drawing picks the direction of each letter at random, so the same text comes out
-as a different path each time: press <em>Draw again</em> for another.</p>
+as a different path each time: press <em>Draw again</em> for another. <em>Colour each
+word</em> gives every word its own colour, as in Article 1 below; hover over a word to
+see it.</p>
 <div class="panel">
   <label for="text" class="hint" style="display:block;margin:0 0 4px">Text</label>
   <textarea id="text" spellcheck="false">the quick red fox jumped over the lazy brown dog</textarea>
@@ -117,6 +125,7 @@ as a different path each time: press <em>Draw again</em> for another.</p>
     <span>Draw as</span>
     <button type="button" id="mode-words" aria-pressed="true">one line per word</button>
     <button type="button" id="mode-one" aria-pressed="false">one line for everything</button>
+    <button type="button" id="colour" aria-pressed="false">colour each word</button>
     <button type="button" id="again">Draw again</button>
   </div>
   <svg id="written" class="out" role="img" aria-label="The text drawn in the Gernreich writing"></svg>
@@ -141,7 +150,9 @@ of the line to go on. Every two steps is read as a letter.</p>
 
 <h3>Article 1</h3>
 <figure>
+  <button type="button" class="redraw" id="article" aria-label="Article 1 as one line; click to draw it another way">
   <img src="images/article-1-claude.svg" width="672" height="780" style="border:0;background:none" alt="Article 1 as one coloured line that works its way down the image in rough rows, from a dot at the top left to an arrow at the bottom">
+  </button>
   <figcaption><strong>Article 1 of the Universal Declaration of Human Rights</strong>, as one
   line: "All human beings are born free and equal in dignity and rights. They are endowed
   with reason and conscience and should act towards one another in a spirit of
@@ -149,7 +160,9 @@ of the line to go on. Every two steps is read as a letter.</p>
   Each word has its own colour, and the line starts at
   the dot and ends at the arrow. A beam search chooses which way to trace each letter
   so that the line works back and forth in rows without ever crossing or touching
-  itself (<code>make_article.js</code>). Hover over a word to see it.</figcaption>
+  itself (<code>make_article.js</code>). Hover over a word to see it, and click the
+  drawing to draw it another way: each click lays out the rows differently and lets the
+  search choose other directions for the letters.</figcaption>
 </figure>
 
 <h3>The map loop</h3>
@@ -229,11 +242,11 @@ ONE. As in Michael's own drawings, G and W are drawn the other way round from th
   const pathD = pts => pts.map((p, i) => (i ? 'L' : 'M') + p[0] + ' ' + p[1]).join('');
 
   // ---- the writer
-  let mode = 'words';
+  let mode = 'words', colour = false;
   function render() {
     const text = $('text').value;
-    const chunks = mode === 'one' ? [text] : text.split(/\s+/);
-    const words = chunks.map(letters).filter(w => w.length);
+    const titles = text.split(/\s+/).filter(t => letters(t).length);
+    const words = mode === 'one' ? [titles.flatMap(letters)].filter(w => w.length) : titles.map(letters);
     const svg = $('written'); svg.innerHTML = '';
     if (!words.length) { svg.setAttribute('viewBox', '0 0 10 1'); $('written-note').textContent = ''; return; }
     const MAXW = mode === 'one' ? Infinity : 42, GAP = 2;
@@ -251,8 +264,15 @@ ONE. As in Michael's own drawings, G and W are drawn the other way round from th
     const H = y + rowH, pad = 0.6;
     svg.setAttribute('viewBox', `${-pad} ${-pad} ${W + 2 * pad} ${H + 2 * pad}`);
     svg.style.maxHeight = mode === 'one' ? '70vh' : 'none';
+    // colour by word: in one line for everything, the line is cut where each word ends
+    let wi = 0;
     for (const pts of placed) {
-      el('path', { class: 'ln', d: pathD(pts) }, svg);
+      if (!colour) el('path', { class: 'ln', d: pathD(pts) }, svg);
+      else for (let k = 0; k < pts.length - 1; wi++) {
+        const n = letters(titles[wi]).length;
+        el('title', {}, el('path', { class: 'ln w' + wi % 8, d: pathD(pts.slice(k, k + 2 * n + 1)) }, svg)).textContent = titles[wi];
+        k += 2 * n;
+      }
       el('circle', { class: 'dot', cx: pts[0][0], cy: pts[0][1], r: 0.22 }, svg);
     }
     $('written-note').textContent = `${total} letters, ${words.length} line${words.length > 1 ? 's' : ''}` +
@@ -266,9 +286,24 @@ ONE. As in Michael's own drawings, G and W are drawn the other way round from th
   }
   $('mode-words').addEventListener('click', () => setMode('words'));
   $('mode-one').addEventListener('click', () => setMode('one'));
+  $('colour').addEventListener('click', () => {
+    colour = !colour;
+    $('colour').setAttribute('aria-pressed', String(colour));
+    render();
+  });
   $('again').addEventListener('click', render);
   $('text').addEventListener('input', render);
   render();
+
+  // ---- Article 1: drawn inline so the words show on hover; each click draws it another way
+  const ARTICLE = 'All human beings are born free and equal in dignity and rights. They are endowed ' +
+    'with reason and conscience and should act towards one another in a spirit of brotherhood.';
+  function drawArticle(rand) {
+    $('article').innerHTML = snakeSVG(ARTICLE, snake(letters(ARTICLE), rand),
+      'Article 1 of the Universal Declaration of Human Rights written as one line in the Gernreich writing, each word in its own colour').svg;
+  }
+  drawArticle();
+  $('article').addEventListener('click', () => drawArticle(() => Math.random()));
 
   // ---- the reader
   const GW = 15, GH = 9, pad = $('pad');

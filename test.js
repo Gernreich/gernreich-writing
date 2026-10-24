@@ -31,6 +31,9 @@ for (const t of ['the quick red fox jumped over the lazy brown dog', 'Michael Ca
   const L = g.letters(t), w = g.write(L);
   check(`writes "${t.slice(0, 30)}..." without crossing, and reads it back`, w.clean && g.read(w.steps) === L.join(''));
 }
+const AL = g.letters(article);
+check('Article 1 redrawn 10 random ways, each without crossing, and reads back',
+  Array.from({ length: 10 }, () => g.read(g.snake(AL, Math.random)) === AL.join('')).every(Boolean));
 check('KH is one letter', g.letters('khaki').join(',') === 'KH,A,K,I');
 
 for (const [script, file] of [['make_chart.js', 'images/alphabet.svg'], ['make_article.js', 'images/article-1-claude.svg'], ['make_coords.js', 'images/coordinates.svg']]) {

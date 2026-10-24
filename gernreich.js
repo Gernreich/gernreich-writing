@@ -110,4 +110,85 @@ function points(steps) {
   return p;
 }
 
-if (typeof module !== 'undefined') module.exports = { STEP, OPP, LETTERS, READ, span2, letters, read, write, points };
+// Letters -> steps for one long line that works back and forth in rows. The rows
+// are WIDTH units long and ROW units apart, run left to right, then right to left.
+// Each letter can only be traced one way or the other, so the line cannot follow
+// the track exactly; a beam search keeps the BEAM routes that stay closest to it
+// without ever crossing or revisiting the line, letter by letter. rand, if given,
+// varies the track and how closely each letter is held to it, so every call draws
+// the text a different way; without it the drawing is always the same.
+function snake(lets, rand) {
+  const r = rand || (() => 0.5);
+  const WIDTH = rand ? 18 + Math.floor(13 * r()) : 24, ROW = rand ? 5 + Math.floor(3 * r()) : 6;
+  const ADV = rand ? 1.05 + 0.3 * r() : 1.2, BEAM = 300;
+  const key = (x, y) => x + ',' + y;
+  function target(i) {
+    const t = i * ADV, lap = WIDTH + ROW;
+    const n = Math.floor(t / lap), u = t - n * lap;
+    const y0 = n * ROW;
+    if (u < WIDTH) return n % 2 ? [WIDTH - u, y0] : [u, y0];
+    return [n % 2 ? 0 : WIDTH, y0 + (u - WIDTH)];
+  }
+  let states = [{ x: 0, y: 0, seen: new Set([key(0, 0)]), diag: new Set(), steps: [], err: 0 }];
+  lets.forEach((l, i) => {
+    const [a, b] = LETTERS[l], next = [];
+    for (const s of states) for (const way of [[a, b], [OPP[b], OPP[a]]]) {
+      let x = s.x, y = s.y, ok = true;
+      const seen = new Set(s.seen), diag = new Set(s.diag);
+      for (const d of way) {
+        const [dx, dy] = STEP[d], nx = x + dx, ny = y + dy;
+        if (seen.has(key(nx, ny))) { ok = false; break; }
+        if (dx && dy) {
+          const sq = key(Math.min(x, nx), Math.min(y, ny));
+          if (diag.has(sq + (dx === dy ? '/' : '\\'))) { ok = false; break; }
+          diag.add(sq + (dx === dy ? '\\' : '/'));
+        }
+        seen.add(key(nx, ny)); x = nx; y = ny;
+      }
+      if (!ok) continue;
+      const [tx, ty] = target(i + 1), d2 = (x - tx) ** 2 + (y - ty) ** 2;
+      next.push({ x, y, seen, diag, steps: s.steps.concat(way), err: s.err + (rand ? d2 * (0.25 + 1.5 * r()) + 20 * r() : d2) });
+    }
+    next.sort((p, q) => p.err - q.err);
+    states = next.slice(0, BEAM);
+    if (!states.length) throw new Error('no crossing-free path at letter ' + i);
+  });
+  return states[0].steps;
+}
+
+// Text and its steps (from snake) -> an SVG of the one line, each word in its own
+// colour, from a dot at the start to an arrow at the end. Returns { svg, W, H }.
+function snakeSVG(text, steps, label) {
+  const titles = text.split(/\s+/).filter(t => letters(t).length);
+  const words = titles.map(letters);
+  const pts = points(steps);
+  const xs = pts.map(p => p[0]), ys = pts.map(p => p[1]);
+  const minX = Math.min(...xs), minY = Math.min(...ys);
+  const S = 18, PAD = 30;
+  const W = (Math.max(...xs) - minX) * S + 2 * PAD, H = (Math.max(...ys) - minY) * S + 2 * PAD;
+  const X = x => ((x - minX) * S + PAD).toFixed(1), Y = y => ((y - minY) * S + PAD).toFixed(1);
+  // eight hues that hold up on white and on near-black, in turn by word
+  const LIGHT = ['#2a78d6', '#e34948', '#1e9e6a', '#c26a00', '#8a4fd8', '#0f8ea0', '#d23f8c', '#6b7f00'];
+  const DARK = ['#5aa0ef', '#f07574', '#3cc48b', '#eda100', '#a97ff0', '#2fb9cc', '#ef6aac', '#a3bd1f'];
+  const out = [];
+  out.push(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="${label}">`);
+  out.push('<style>.bg{fill:#fcfcfb}.p{fill:none;stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round}.ink{fill:#0b0b0b}' +
+    LIGHT.map((c, i) => `.c${i}{stroke:${c}}`).join('') +
+    '@media (prefers-color-scheme: dark){.bg{fill:#1a1a19}.ink{fill:#f0efec}' +
+    DARK.map((c, i) => `.c${i}{stroke:${c}}`).join('') + '}</style>');
+  out.push(`<rect class="bg" width="${W}" height="${H}" rx="10"/>`);
+  let k = 0;
+  words.forEach((w, wi) => {
+    const seg = pts.slice(k, k + 2 * w.length + 1);
+    out.push(`<path class="p c${wi % LIGHT.length}" d="${seg.map((p, j) => (j ? 'L' : 'M') + X(p[0]) + ' ' + Y(p[1])).join('')}"><title>${titles[wi]}</title></path>`);
+    k += 2 * w.length;
+  });
+  out.push(`<circle class="ink" cx="${X(pts[0][0])}" cy="${Y(pts[0][1])}" r="6"/>`);
+  const [ex, ey] = pts[pts.length - 1], [px, py] = pts[pts.length - 2];
+  const ang = Math.atan2(ey - py, ex - px) * 180 / Math.PI;
+  out.push(`<path class="ink" transform="translate(${X(ex)} ${Y(ey)}) rotate(${ang.toFixed(0)})" d="M4 0 L-8 -6 L-8 6 Z"/>`);
+  out.push('</svg>');
+  return { svg: out.join('\n') + '\n', W, H };
+}
+
+if (typeof module !== 'undefined') module.exports = { STEP, OPP, LETTERS, READ, span2, letters, read, write, points, snake, snakeSVG };
