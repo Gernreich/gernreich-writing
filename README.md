@@ -31,3 +31,7 @@ all redrawn with the chart's letters) are by Claude Code.
 | `images/` | the drawings above, and the map loop redrawn over its map |
 
 Released under [CC0 1.0](LICENSE).
+
+## Credits
+
+The script is Michael Gernreich's; [Claude](https://www.anthropic.com/claude) (Anthropic), working in Claude Code, co-wrote the code and the documentation that present it. Commits Claude made carry a `Co-Authored-By: Claude` line.
